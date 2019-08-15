@@ -6,20 +6,20 @@ Logging:
 General:
     Modus:          Collider
     Time_Step_Mode: Fixed
-    Delta_Time:     0.1         #make it for diff energy
+    Delta_Time:     0.1
     End_Time:       100.0
-    Randomseed:     71950
+    Randomseed:     152610
     Nevents:        1000
 
 Output:
     Output_Interval: 10.0
     Density_Type: "baryon"
     Particles:
-        Format:          ["Root", "Oscar1999"]
+        Format:          ["Root"]
         Extended: True  #False
-        Only_Final: False
+        Only_Final: True
     Collisions:
-        Format:          ["Root", "Oscar1999"]
+        Format:          ["Root"]
         Extended: True
         Print_Start_End: True
 
@@ -33,7 +33,7 @@ Modi:
             Sample: "quadratic"
             Range: [0.0, 18.0]
 
-        Sqrtsnn: 11.5
+        Sqrtsnn: 5.0
         Fermi_Motion: "frozen"  #5 frozen?
 
 #Potentials:
