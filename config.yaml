@@ -1,0 +1,53 @@
+Version: 1.5 # minimal SMASH version to use with this config file
+
+Logging:
+    default: INFO
+
+General:
+    Modus:          Collider
+    Time_Step_Mode: Fixed
+    Delta_Time:     0.1         #make it for diff energy
+    End_Time:       100.0
+    Randomseed:     71950
+    Nevents:        1000
+
+Output:
+    Output_Interval: 10.0
+    Density_Type: "baryon"
+    Particles:
+        Format:          ["Root", "Oscar1999"]
+        Extended: True  #False
+        Only_Final: False
+    Collisions:
+        Format:          ["Root", "Oscar1999"]
+        Extended: True
+        Print_Start_End: True
+
+Modi:
+    Collider:
+        Projectile:
+            Particles: {2212: 79, 2112: 118} #Gold197
+        Target:
+            Particles: {2212: 79, 2112: 118} #Gold197
+        Impact:
+            Sample: "quadratic"
+            Range: [0.0, 18.0]
+
+        Sqrtsnn: 11.5
+        Fermi_Motion: "frozen"  #5 frozen?
+
+#Potentials:
+#    Skyrme:
+#        Skyrme_A: -209.2
+#        Skyrme_B: 156.4
+#        Skyrme_Tau: 1.35
+#    Symmetry:
+#        S_Pot: 18.0
+#default
+#           a [MeV]   b [MeV]     t    S_pot [MeV]
+#
+#default    -209.2    156.4     1.35    18
+#
+#soft       -356.0    303.0     1.17    18
+#
+#hard       -124.0    71.0      2.0     18
