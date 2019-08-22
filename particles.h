@@ -113,6 +113,11 @@ public :
    TH2D *hptrap[kParticles];
    TH2D *hptpsr[kParticles];
    TH2D *hrappsr[kParticles];
+   // Flow
+   TProfile *pVn_pT[2][kParticles];
+   TProfile *pVn_Y[2][kParticles];
+   TProfile *hpVn_pT[2];
+   TProfile *hpVn_Y[2];
 
 
    particles(TTree *tree=0);
@@ -295,21 +300,30 @@ Int_t particles::Cut(Long64_t entry)
 }
 void particles::InitHists(){
    hB = new TH1D("hB","Impact parameter; B (fm);nEvents", 200, 0, 20);
+   hpVn_Y[0] = new TProfile("v1_from_Y", "v1 from Y; Y; v1", 100, -1, 1);
+   hpVn_Y[1] = new TProfile("v2_from_Y", "v2 from Y; Y; v1", 100, -1, 1);
+   hpVn_pT[0] = new TProfile("v1_from_p_{t}", "v1 from p_{t}; p_{t}; v1", 100, 0, 5);
+   hpVn_pT[1] = new TProfile("v2_from_p_{t}", "v1 from p_{t}; p_{t}; v1", 100, 0, 5);
    for (int i=0; i<kParticles; i++){
-      hp[i] = new TH1D("hp"+gParticles[i].displayName, "P "+gParticles[i].displayName+"; p, [GeV/c]; nEntries",100,0,5);
-      hpx[i] = new TH1D("hpx"+gParticles[i].displayName, "Px "+gParticles[i].displayName+"; px, [GeV/c]; nEntries",100, -1.5, 1.5);
-      hpy[i] = new TH1D("hpy"+gParticles[i].displayName, "Py "+gParticles[i].displayName+"; py, [GeV/c]; nEntries",100, -1.5, 1.5);
-      hpz[i] = new TH1D("hpz"+gParticles[i].displayName, "Pz "+gParticles[i].displayName+"; pz, [GeV/c]; nEntries",100, -5, 5);
-      hpt[i] = new TH1D("hpt"+gParticles[i].displayName, "pt "+gParticles[i].displayName+"; pt, [GeV/c]; nEntries",100, 0, 2.5);
-      hrap[i] = new TH1D("hrap"+gParticles[i].displayName, "rapidity "+gParticles[i].displayName+"; rapidity; nEntries",100, -2.5, 2.5);
-      hpcr[i] = new TH1D("hpcr"+gParticles[i].displayName, "Pseudorapidity "+gParticles[i].displayName+"; pseudorapidity; nEntries",100, -8, 8);
-      hptrap[i] = new TH2D("hptrap"+gParticles[i].displayName, "pt vs rapidity "+gParticles[i].displayName+"; pt, [GeV/c]; rapidity",100, 0, 2.5, 100, -2.5, 2.5);
-      hptpsr[i] = new TH2D("hptpsr"+gParticles[i].displayName, "pt vs Pseudorapidity "+gParticles[i].displayName+"; pt, [GeV/c]; pseudorapidity",100, 0, 2.5, 100, -8, 8);
-      hrappsr[i] = new TH2D("hrappsr"+gParticles[i].displayName, "rapidity vs Pseudorapidity "+gParticles[i].displayName+"; rapidity; pseudorapidity",100, -2.5, 2.5, 100, -8, 8);
-   }
-   hppt = new TH2D("hppt", "pt vs p; pt, [GeV/c]; p, [GeV/c]", 100, 0, 2.5, 100, 0, 5);
-   hpEn = new TH2D("hpEn", "pt vs Energy; pt, [GeV/c]; E, [GeV]", 100, 0, 2.5, 100, 0, 5);
+      hp[i] = new TH1D("hp"+gParticles[i].name, "P "+gParticles[i].displayName+"; p, [GeV/c]; nEntries",100,0,5);
+      hpx[i] = new TH1D("hpx"+gParticles[i].name, "Px "+gParticles[i].displayName+"; px, [GeV/c]; nEntries",100, -1.5, 1.5);
+      hpy[i] = new TH1D("hpy"+gParticles[i].name, "Py "+gParticles[i].displayName+"; py, [GeV/c]; nEntries",100, -1.5, 1.5);
+      hpz[i] = new TH1D("hpz"+gParticles[i].name, "Pz "+gParticles[i].displayName+"; pz, [GeV/c]; nEntries",100, -5, 5);
+      hpt[i] = new TH1D("hpt"+gParticles[i].name, "pt "+gParticles[i].displayName+"; pt, [GeV/c]; nEntries",100, 0, 2.5);
+      hrap[i] = new TH1D("hrap"+gParticles[i].name, "rapidity "+gParticles[i].displayName+"; rapidity; nEntries",100, -2.5, 2.5);
+      hpcr[i] = new TH1D("hpcr"+gParticles[i].name, "Pseudorapidity "+gParticles[i].displayName+"; pseudorapidity; nEntries",100, -8, 8);
+      hptrap[i] = new TH2D("hptrap"+gParticles[i].name, "pt vs rapidity "+gParticles[i].displayName+"; pt, [GeV/c]; rapidity",100, 0, 2.5, 100, -2.5, 2.5);
+      hptpsr[i] = new TH2D("hptpsr"+gParticles[i].name, "pt vs Pseudorapidity "+gParticles[i].displayName+"; pt, [GeV/c]; pseudorapidity",100, 0, 2.5, 100, -8, 8);
+      hrappsr[i] = new TH2D("hrappsr"+gParticles[i].name, "rapidity vs Pseudorapidity "+gParticles[i].displayName+"; rapidity; pseudorapidity",100, -2.5, 2.5, 100, -8, 8);
 
+         pVn_Y[0][i]  = new TProfile("v1_from_Y_"+gParticles[i].name, "v1 from Y "+gParticles[i].displayName+"; Y; v1", 100, -1, 1);
+         pVn_Y[1][i]  = new TProfile("v2_from_Y_"+gParticles[i].name, "v2 from Y "+gParticles[i].displayName+"; Y; v2", 100, -1, 1);
+         pVn_pT[0][i] = new TProfile("v1_from_p_{t}_"+gParticles[i].name, "v1 from p_{t} "+gParticles[i].displayName+"; p_{t}, [GeV/c]; v1", 100, 0, 2);
+         pVn_pT[1][i] = new TProfile("v2_from_p_{t}_"+gParticles[i].name, "v2 from p_{t} "+gParticles[i].displayName+"; p_{t}, [GeV/c]; v2", 100, 0, 2);
+      
+   }
+   hppt = new TH2D("hppt", "p_{t} vs p; p_{t}, [GeV/c]; p, [GeV/c]", 100, 0, 2.5, 100, 0, 5);
+   hpEn = new TH2D("hpEn", "p_{t} vs Energy; p_{t}, [GeV/c]; E, [GeV]", 100, 0, 2.5, 100, 0, 5);
 }
 void particles::FillHists(){
    hB->Fill(impact_b);
@@ -327,6 +341,7 @@ void particles::FillHists(){
       Double_t momentum = sqrt( px[i]*px[i] + py[i]*py[i] + pz[i]*pz[i] );
       Double_t psrap = 1.0/2.0 * log( (momentum + pz[i]) / (momentum - pz[i]) );
       Double_t pt = sqrt( px[i]*px[i] + py[i]*py[i] );
+      if (rap > 1.0 || rap < -1.0) continue;
       //std::cout<<pt<<std::endl;
       hpx[ppid]->Fill(px[i]);
       hpy[ppid]->Fill(py[i]);
@@ -340,6 +355,27 @@ void particles::FillHists(){
       hrappsr[ppid]->Fill(rap, psrap);
       hppt->Fill(pt, momentum);
       hpEn->Fill(pt, p0[i]);
+      Double_t flow;
+      Int_t flowSign=0;
+      Double_t phi, psiRP;
+      phi=TMath::ATan2(py[i],px[i]);
+      psiRP=0;
+
+
+      for (Int_t iHarm=0; iHarm<2; ++iHarm) {
+         if (iHarm % 2 == 0 && rap < 0.) flowSign = -1;
+         else flowSign = 1;
+         flow = cos ( (iHarm + 1) * ( phi - psiRP) );
+         hpVn_pT[iHarm]->Fill(pt, flowSign * flow );
+         hpVn_Y[iHarm]->Fill(rap, flow );
+    }
+      for (Int_t iHarm=0; iHarm<2; iHarm++){   //1 and 2
+         if (iHarm % 2 == 0 && rap < 0.) flowSign = -1;
+         else flowSign = 1;
+         flow = cos ( (iHarm + 1) * ( phi - psiRP) );
+         pVn_pT[iHarm][ppid]->Fill(pt, flowSign * flow  );
+          pVn_Y[iHarm][ppid]->Fill(rap, flow );
+      }
    }
 }
 void particles::SaveHists(){
@@ -350,6 +386,10 @@ void particles::SaveHists(){
    hB->Write();
    hppt->Write();
    hpEn->Write();
+   hpVn_Y[0]->Write();
+   hpVn_Y[1]->Write();
+   hpVn_pT[0]->Write();
+   hpVn_pT[1]->Write();
    for (int i=0;i<kParticles;i++) {
     outputDir = w->mkdir(gParticles[i].name);
     outputDir->cd ();
@@ -363,7 +403,12 @@ void particles::SaveHists(){
     hptrap[i]->Write();
     hptpsr[i]->Write();
     hrappsr[i]->Write();
+       pVn_Y[0][i]->Write();
+       pVn_Y[1][i]->Write();
+      pVn_pT[0][i]->Write();
+      pVn_pT[1][i]->Write();
    }
+   /*
    //other save
    std::unique_ptr <TCanvas> c1 {new TCanvas("c1", "canvas", 1500, 900)};
     
@@ -387,6 +432,7 @@ void particles::SaveHists(){
    w->cd();
    c1->Write();
    w->Close();
+   */
 	delete w;
    HistsDell();
 }
@@ -395,17 +441,25 @@ void particles::HistsDell(){
    delete hB;
    delete hppt;
    delete hpEn;
+   delete hpVn_Y[0];
+   delete hpVn_Y[1];
+   delete hpVn_pT[0];
+   delete hpVn_pT[1];
    for (int i=0;i<kParticles;i++){
-   delete hp[i];
-   delete hpx[i];
-   delete hpy[i];
-   delete hpz[i];
-   delete hpt[i];
-   delete hrap[i];
-   delete hpcr[i];
-   delete hptrap[i];
-   delete hptpsr[i];
-   delete hrappsr[i];
+      delete hp[i];
+      delete hpx[i];
+      delete hpy[i];
+      delete hpz[i];
+      delete hpt[i];
+      delete hrap[i];
+      delete hpcr[i];
+      delete hptrap[i];
+      delete hptpsr[i];
+      delete hrappsr[i];
+      delete pVn_Y[0][i];
+      delete pVn_Y[1][i];
+      delete pVn_pT[0][i];
+      delete pVn_pT[1][i];
    }
 }
 
