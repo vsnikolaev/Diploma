@@ -13,7 +13,7 @@ void particles::Loop()
    std::cout<<"I will run " << nentries <<" events"<<std::endl;
    InitHists();
    for (Long64_t jentry=0; jentry<nentries;jentry++) {
-      if (jentry%100 == 0) {
+      if (! (jentry%100) ) {
          std::cout << "\r I COMPLETED " << jentry << " events out of " << nentries << std::flush;
       }
       Long64_t ientry = LoadTree(jentry);
