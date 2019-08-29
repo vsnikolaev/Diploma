@@ -7,5 +7,5 @@ Before running QA make fill file list.
 
 3) run root
 
-`root -l QAstart.C`
+`root -l QAstart.c`
 
