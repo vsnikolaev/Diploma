@@ -306,6 +306,7 @@ void particles::FillHists(){
       Double_t momentum = sqrt( px[i]*px[i] + py[i]*py[i] + pz[i]*pz[i] );
       Double_t psrap = 1.0/2.0 * log( (momentum + pz[i]) / (momentum - pz[i]) );
       Double_t pt = sqrt( px[i]*px[i] + py[i]*py[i] );
+	   /*
       if (ppid==kPROTON || ppid==kNEUTRON){      //kill the main parn of spectators.   to kill all |rap|<1, but...
          if (fabs(pz[i]) > 1.8 && fabs(pz[i]) < 3){  
             if (pt<0.5){
@@ -315,7 +316,7 @@ void particles::FillHists(){
             }
          }
       }
-      //std::cout<<pt<<std::endl;
+      */
       hpx[ppid]->Fill(px[i]);
       hpy[ppid]->Fill(py[i]);
       hpz[ppid]->Fill(pz[i]);
