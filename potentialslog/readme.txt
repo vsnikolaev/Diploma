@@ -3,7 +3,15 @@
   With an energy of 5 GeV there was no error.
   In this folder there are files with logs, run file and config file.
 
-   6 log files are made with different potentials and energies 7.7 and 11.5 GeV Au+Au
+   6 log files are made with different potentials and energies 7.7 and 11.5 GeV Au+Au:
+#           a [MeV]   b [MeV]     t    S_pot [MeV]
+#
+#default    -209.2    156.4     1.35    18
+#
+#soft       -356.0    303.0     1.17    18
+#
+#hard       -124.0    71.0      2.0     18
+#Energy Snn 7.7 or 11.5 
    Potential parameters are taken from the article: 
 http://inspirehep.net/record/1664230/files/PoS(EPS-HEP2017)178.pdf
    
