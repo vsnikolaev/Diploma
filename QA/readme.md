@@ -1,4 +1,4 @@
-Before running QA make fill file list.
+Before running QA fill filelist.
 1) At dir with files write
 
 `find $PWD -name "part*.root" | cat > filelist`
