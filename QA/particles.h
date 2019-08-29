@@ -184,7 +184,7 @@ particles::~particles()
 {
    if (!fChain) return;
    delete fChain->GetCurrentFile();
-   HistsDell();
+  // HistsDell();
 }
 
 Int_t particles::GetEntry(Long64_t entry)
@@ -381,33 +381,9 @@ void particles::SaveHists(){
       pVn_pT[0][i]->Write();
       pVn_pT[1][i]->Write();
    }
-   /*
-   //other save
-   std::unique_ptr <TCanvas> c1 {new TCanvas("c1", "canvas", 1500, 900)};
-    
-   c1->Divide(2,2);
-    
-   std::unique_ptr <TPad> c1_4 {(TPad*) c1->GetListOfPrimitives()->FindObject("c1_4")};
-   c1_4->SetLogz(1);
-
-   c1->cd(1);
-   hpx[0]->SetLineColor(2);
-   hpy[0]->SetLineColor(5);
-   hpx[0]->Draw();
-   hpy[0]->Draw("same");
-   c1->cd(2);
-   hpz[0]->Draw();
-   c1->cd(3);
-   hB->Draw();
-   c1->cd(4);
-   hrappsr[0]->Draw("colz");
-   c1->SaveAs("protonQA.pdf");
-   w->cd();
-   c1->Write();
    w->Close();
-   */
-	delete w;
-   HistsDell();
+   delete w;
+//  HistsDell();
 }
 
 void particles::HistsDell(){
