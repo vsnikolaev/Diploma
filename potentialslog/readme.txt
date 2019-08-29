@@ -18,5 +18,11 @@ stack trace:
   /lib/x86_64-linux-gnu/libm.so.6 : ()+0x15543
   /lib/x86_64-linux-gnu/libm.so.6 : pow()+0x1c
   /lustre/nyx/hades/user/parfenov/Soft/Models/SMASH/smash/build/smash : smash::Potentials::skyrme_force(double, smash::ThreeVector, smash::ThreeVector, smash::ThreeVector) const+0x36
- ....
-At log files full list.
+  /lustre/nyx/hades/user/parfenov/Soft/Models/SMASH/smash/build/smash : smash::Potentials::all_forces(smash::ThreeVector const&, std::vector<smash::ParticleData, std::allocator<smash::ParticleData> > const&) const+0x244
+  /lustre/nyx/hades/user/parfenov/Soft/Models/SMASH/smash/build/smash : smash::update_momenta(smash::Particles*, double, smash::Potentials const&, smash::RectangularLattice<std::pair<smash::ThreeVector, smash::ThreeVector> >*, smash::RectangularLattice<std::pair<smash::ThreeVector, smash::ThreeVector> >*)+0x5fb
+  /lustre/nyx/hades/user/parfenov/Soft/Models/SMASH/smash/build/smash : smash::Experiment<smash::ColliderModus>::run_time_evolution()+0x396
+  /lustre/nyx/hades/user/parfenov/Soft/Models/SMASH/smash/build/smash : smash::Experiment<smash::ColliderModus>::run()+0x191
+  /lustre/nyx/hades/user/parfenov/Soft/Models/SMASH/smash/build/smash : main()+0x1952
+  /lib/x86_64-linux-gnu/libc.so.6 : __libc_start_main()+0xf5
+  /lustre/nyx/hades/user/parfenov/Soft/Models/SMASH/smash/build/smash() [0x44a997]
+
