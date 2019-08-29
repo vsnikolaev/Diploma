@@ -1,0 +1,964 @@
+Version: 1.5 # minimal SMASH version to use with this config file
+
+Logging:
+    default: INFO
+
+General:
+    Modus:          Collider
+    Time_Step_Mode: Fixed
+    Delta_Time:     0.01
+    End_Time:       100.0
+    Randomseed:     976850
+    Nevents:        100
+    Gaussian_Sigma: 1.0
+    Gauss_Cutoff_In_Sigma: 4.0
+    Use_Grid: True
+
+Output:
+    Output_Interval: 10.0
+    Density_Type: "baryon"
+    Particles:
+        Format:     ["Root"]
+        Extended:   True
+        Only_Final: True
+#    Collisions:
+#        Format:     ["Root"]
+#        Extended:   True
+#        Print_Start_End: True
+
+Modi:
+    Collider:
+        Projectile:
+            Particles: {2212: 79, 2112: 118} #Gold197
+        Target:
+            Particles: {2212: 79, 2112: 118} #Gold197
+        Impact:
+            Sample: "quadratic"
+            Range:  [0.0, 18.0]    #[0.0, 14.0] 
+
+        Sqrtsnn: 7.7
+        Fermi_Motion: "on"	#frozen / on ? then delta_time 0.01 for Snn=5
+
+Potentials:
+    Skyrme:
+        Skyrme_A: -356.0
+        Skyrme_B: 303.0
+        Skyrme_Tau: 1.17
+    Symmetry:
+        S_Pot: 18.0
+#default
+#           a [MeV]   b [MeV]     t    S_pot [MeV]
+#
+#default    -209.2    156.4     1.35    18
+#
+#soft       -356.0    303.0     1.17    18
+#
+#hard       -124.0    71.0      2.0     18
+input_line_8:1:2911: error: redefinition of 'MixMaxEngine' as different kind of symbol
+/cvmfs/it.gsi.de/root/v6-06-06/include/root/Math/MixMaxEngine.h:55:13: note: previous definition is here
+      class MixMaxEngine : public TRandomEngine {
+            ^
+input_line_8:1:3377: error: too many template parameters in template redeclaration
+/cvmfs/it.gsi.de/root/v6-06-06/include/root/Fit/BasicFCN.h:42:1: note: previous template declaration is here
+template<class FunType, class DataType>
+^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+input_line_8:1:3555: error: too many template parameters in template redeclaration
+/cvmfs/it.gsi.de/root/v6-06-06/include/root/Fit/Chi2FCN.h:65:1: note: previous template declaration is here
+template<class FunType>
+^~~~~~~~~~~~~~~~~~~~~~~
+input_line_8:1:3662: error: too many template parameters in template redeclaration
+/cvmfs/it.gsi.de/root/v6-06-06/include/root/Fit/LogLikelihoodFCN.h:54:1: note: previous template declaration is here
+template<class FunType>
+^~~~~~~~~~~~~~~~~~~~~~~
+input_line_8:1:3778: error: too many template parameters in template redeclaration
+/cvmfs/it.gsi.de/root/v6-06-06/include/root/Fit/PoissonLikelihoodFCN.h:55:1: note: previous template declaration is here
+template<class FunType>
+^~~~~~~~~~~~~~~~~~~~~~~
+Warning in <TInterpreter::LoadLibraryMap>: Problems in (null) declaring 'namespace std {  }namespace ROOT { namespace Math {  } }namespace ROOT { namespace Math { template <typename T, unsigned int, unsigned int> class MatRepStd; } }namespace ROOT { namespace Math { template <typename T, unsigned int> class MatRepSym; } }namespace ROOT { namespace Math { template <typename T, unsigned int> class SVector; } }namespace ROOT { namespace Math { template <typename T, unsigned int, unsigned int, typename R> class SMatrix; } }template <typename Element> class TMatrixTBase;template <typename Element> class TVectorT;template <typename Element> class TMatrixT;template <typename Element> class TMatrixTSym;template <typename Element> class TMatrixTSparse;template <typename Element> class TMatrixTRow_const;template <typename Element> class TMatrixTRow;template <typename Element> class TMatrixTColumn_const;template <typename Element> class TMatrixTColumn;template <typename Element> class TMatrixTDiag_const;template <typename Element> class TMatrixTDiag;template <typename Element> class TMatrixTFlat_const;template <typename Element> class TMatrixTFlat;template <typename Element> class TMatrixTSub_const;template <typename Element> class TMatrixTSub;template <typename Element> class TMatrixTSparseRow_const;template <typename Element> class TMatrixTSparseRow;template <typename Element> class TMatrixTSparseDiag_const;template <typename Element> class TMatrixTSparseDiag;template <typename Element> class TMatrixTLazy;template <typename Element> class TMatrixTSymLazy;template <typename Element> class THaarMatrixT;template <typename Element> class THilbertMatrixT;template <typename Element> class THilbertMatrixTSym;namespace TMVA {  }namespace TMVA { namespace kNN {  } }namespace TMVA { namespace Experimental {  } }namespace ROOT { namespace Math { namespace IntegrationOneDim {  } } }namespace __gnu_cxx {  }namespace __gnu_cxx { template <typename _Iterator, typename _Container> class __normal_iterator; }template <typename Index, typename Value> class TKDTree;namespace ROOT { namespace Math { template <typename T> class IBaseFunctionMultiDimTempl; } }namespace ROOT { namespace Math { template <typename T> class IGradientFunctionMultiDimTempl; } }namespace ROOT { namespace Math { template <typename T> class IGradientMultiDimTempl; } }namespace ROOT { namespace Math { template <typename T> class IParametricFunctionMultiDimTempl; } }namespace ROOT { namespace Math { template <typename T> class IParametricGradFunctionMultiDimTempl; } }namespace ROOT { namespace Math { template <typename T> class ParamFunctorTempl; } }namespace ROOT { namespace Math { template <typename FunctionType> class BasicFitMethodFunction; } }namespace ROOT { namespace Math { template <unsigned int, typename _val_type> class TDataPoint; } }namespace ROOT { namespace Math { template <typename _val_type> class TDataPointN; } }namespace ROOT { namespace Math { template <int, int> class MixMaxEngine; } }namespace ROOT { namespace Math { class MersenneTwisterEngine; } }namespace ROOT { namespace Math { template <typename Engine> class Random; } }namespace ROOT { namespace Math { class LCGEngine; } }template <typename Engine> class TRandomGen;namespace ROOT { namespace Math { template <typename Generator> class StdEngine; } }namespace ROOT { namespace Fit {  } }namespace ROOT { namespace Fit { class UnBinData; } }namespace ROOT { namespace Fit { template <typename DerivFunType, typename ModelFunType, typename DataType> class BasicFCN; } }namespace ROOT { namespace Fit { class BinData; } }namespace ROOT { namespace Fit { template <typename DerivFunType, typename ModelFunType> class Chi2FCN; } }namespace ROOT { namespace Fit { template <typename DerivFunType, typename ModelFunType> class LogLikelihoodFCN; } }namespace ROOT { namespace Fit { template <typename DerivFunType, typename ModelFunType> class PoissonLikelihoodFCN; } }namespace ROOT { namespace Math { template <typename T> class Cartesian2D; } }namespace ROOT { namespace Math { template <typename T> class Polar2D; } }namespace ROOT { namespace Math { template <typename T> class Cartesian3D; } }namespace ROOT { namespace Math { template <typename T> class CylindricalEta3D; } }namespace ROOT { namespace Math { template <typename T> class Polar3D; } }namespace ROOT { namespace Math { template <typename T> class Cylindrical3D; } }namespace ROOT { namespace Math { class GlobalCoordinateSystemTag; } }namespace ROOT { namespace Math { template <typename CoordSystem, typename Tag> class DisplacementVector3D; } }namespace ROOT { namespace Math { class LocalCoordinateSystemTag; } }namespace ROOT { namespace Math { class DefaultCoordinateSystemTag; } }namespace ROOT { namespace Math { template <typename CoordSystem, typename Tag> class PositionVector3D; } }namespace ROOT { namespace Math { template <typename T> class PxPyPzE4D; } }namespace ROOT { namespace Math { template <typename T> class PxPyPzM4D; } }namespace ROOT { namespace Math { template <typename T> class PtEtaPhiE4D; } }namespace ROOT { namespace Math { template <typename T> class PtEtaPhiM4D; } }template <typename T> class _root_std_complex;namespace PyROOT {  }class TEveProjection;template <typename TT> class TEveVectorT;template <typename TT> class TEveVector4T;template <typename TT> class TEveVector2T;template <typename TT> class TEvePathMarkT;template <typename TT> class TEveRecTrackT;class TString;namespace ROOT {  }template <typename AParamType> class TParameter;namespace ROOT { namespace Detail {  } }namespace ROOT { namespace Math { template <unsigned int> class RowOffsets; } }namespace ROOT { namespace Internal {  } }namespace ROOT { namespace Internal { template <typename T> class TImpProxy; } }namespace ROOT { namespace Internal { template <typename T, int> class TArrayType; } }namespace ROOT { namespace Internal { template <typename T> class TArrayProxy; } }namespace ROOT { namespace Internal { template <typename T> class TClaImpProxy; } }namespace ROOT { namespace Internal { template <typename T> class TClaArrayProxy; } }namespace ROOT { namespace Internal { namespace TDF {  } } }namespace ROOT { namespace Detail { namespace TDF {  } } }namespace ROOT { namespace Experimental { namespace TDF {  } } }namespace ROOT { namespace Detail { namespace TDF { class TFilterBase; } } }namespace ROOT { namespace Detail { namespace TDF { class TCustomColumnBase; } } }namespace ROOT { namespace Experimental {  } }class TProofDrawListOfGraphs;class TProofDrawListOfPolyMarkers3D;namespace RooStats { namespace HistFactory {  } }class RooAbsCacheElement;template <typename T> class RooCacheManager;namespace ROOT { namespace Math { class IParametricGradFunctionOneDim; } }namespace ROOT { namespace Math { namespace Roots {  } } }namespace ROOT { namespace Math { class GSLQRngSobol; } }namespace ROOT { namespace Math { class GSLQRngNiederreiter2; } }namespace ROOT { namespace Math { class GSLRngMT; } }namespace ROOT { namespace Math { class GSLRngTaus; } }namespace ROOT { namespace Math { class GSLRngRanLux; } }namespace ROOT { namespace Math { class GSLRngGFSR4; } }namespace ROOT { namespace Math { class GSLRngRanLuxD2; } }namespace ROOT { namespace Math { class GSLRngRanLuxD1; } }namespace ROOT { namespace Math { class GSLRngRanLuxS2; } }namespace ROOT { namespace Math { class GSLRngRanLuxS1; } }template <typename T> class TNDArrayRef;template <typename T> class TNDArrayT;template <typename T> class THnT;class TArrayD;class TArrayF;class TArrayL;class TArrayI;class TArrayS;class TArrayC;namespace ROOT { namespace Math { template <typename T> class WrappedMultiTF1Templ; } }namespace ROOT { namespace v5 {  } }template <typename VO, typename VI> class RooCFunction1Ref;template <typename VO, typename VI> class RooCFunction1Binding;template <typename VO, typename VI> class RooCFunction1PdfBinding;template <typename VO, typename VI1, typename VI2> class RooCFunction2Ref;template <typename VO, typename VI1, typename VI2> class RooCFunction2Binding;template <typename VO, typename VI1, typename VI2> class RooCFunction2PdfBinding;template <typename VO, typename VI1, typename VI2, typename VI3> class RooCFunction3Ref;template <typename VO, typename VI1, typename VI2, typename VI3> class RooCFunction3Binding;template <typename VO, typename VI1, typename VI2, typename VI3> class RooCFunction3PdfBinding;template <typename VO, typename VI1, typename VI2, typename VI3, typename VI4> class RooCFunction4Ref;template <typename VO, typename VI1, typename VI2, typename VI3, typename VI4> class RooCFunction4Binding;template <typename VO, typename VI1, typename VI2, typename VI3, typename VI4> class RooCFunction4PdfBinding;namespace ROOT { namespace Math { template <typename CoordSystem, typename Tag> class DisplacementVector2D; } }namespace ROOT { namespace Math { template <typename CoordSystem, typename Tag> class PositionVector2D; } }namespace ROOT { namespace Math { template <typename CoordSystem> class LorentzVector; } }namespace ROOT { namespace Math { template <typename ScalarType> class PtEtaPhiM4D; } }namespace ROOT { namespace Math { template <typename ScalarType> class PxPyPzM4D; } }namespace ROOT { namespace Math { template <typename ScalarType> class PtEtaPhiE4D; } }namespace ROOT { namespace Math { namespace Impl {  } } }namespace ROOT { namespace Math { namespace Impl { template <typename T> class Plane3D; } } }namespace ROOT { namespace Math { namespace Impl { template <typename T> class Translation3D; } } }namespace ROOT { namespace Math { namespace Impl { template <typename T> class Transform3D; } } }namespace RooStats {  }namespace TStreamerInfoActions {  }namespace ROOT { namespace Minuit2 {  } }namespace Memstat {  }' were encountered.
+[13'00'29]  WARN     DecayModes     : Branching ratios of 52 hadrons were renormalized by more than 1% to have sum 1.
+###############################################################################
+
+            :::s.
+       ....  ''ss::                                                  ah:
+     a::''.   ..:sss                                                .HH.
+   mss'..     ...s'm.   sSA##As  mAhh##hsh##s.   .hA##ASa  sS###As  hMAh##h.
+  :a':'.      .'':as   sM#'     .HHm''HMS''AMs  mMA' .AMs aMA.     'HHa..HM:
+  .a:s'.    ..''ss     'h#H#S.  mMm  'M#' .HH. 'MH.  :MA  'h#H#S.  hMm  :M#
+   .::ss'.  ....          'SMm .HH.  SMa  hMm  sM#..mHMs     'AMa 'MH.  SMa
+      .s::'           #SMASHh  aMS  .MH:  HM:   #MMMmMM. #SMASHh  aMS  .MM.
+
+###############################################################################
+ This is SMASH version: SMASH-1.6
+ Simulating Many Accelerated Strongly-interacting Hadrons
+
+ Distributed under the GNU General Public License 3.0 (GPLv3 or later).
+ See LICENSE for details.
+ For the full list of contributors see AUTHORS.
+
+ When using SMASH, please cite
+      J. Weil et al., Phys.Rev. C94 (2016) no.5, 054905
+ and in addition, if Pythia is used please cite
+      T. Sjöstrand, S. Mrenna and P. Skands, JHEP05 (2006) 026,
+              Comput. Phys. Comm. 178 (2008) 852.
+
+ Webpage: https://smash-transport.github.io
+
+ Report issues at https://github.com/smash-transport/smash
+ or contact us by email at elfner@th.physik.uni-frankfurt.de
+
+###############################################################################
+
+[13'00'29]  INFO     Experiment     : End time: 100 fm/c
+                                      -- Collider Modus:
+                                      sqrt(S) (nucleus-nucleus) = 1516.9 GeV
+                                      sqrt(S) (nucleon-nucleon) = 7.7 GeV
+                                      Projectile:
+                                        #particles   #testparticles   mass [GeV]   radius [fm]  diffusiveness [fm]
+                                               197              197      184.786          6.38               0.535
+                                      Target:
+                                        #particles   #testparticles   mass [GeV]   radius [fm]  diffusiveness [fm]
+                                               197              197      184.786          6.38               0.535
+[13'00'32]  INFO     Experiment     : Adding output Particles of format Root
+[13'00'32]  WARN       Output       : Creating Root output: There is no extended Root format.
+[13'00'32]  INFO     Experiment     : Potentials are ON. Timestep is 0.01
+[13'00'32]  INFO        Main        : Event 0
+[13'00'32]  INFO     Experiment     : random number seed: 976850
+[13'00'32]  INFO      Collider      : Impact parameter = 14.2692 fm
+[13'00'32]  INFO      Collider      : Fermi motion is ON.
+[13'00'32]  INFO     Experiment     : -------------------------------------------------------------------
+[13'00'32]  INFO     Experiment     : Time [fm]   Ediff [GeV]    Scatt.|Decays   Particles         Timing
+[13'00'32]  INFO     Experiment     : -------------------------------------------------------------------
+[13'00'32]  INFO     Experiment     :    -2.062         0.000                0         394      3.430 [s]
+[13'00'34]  INFO     Experiment     :     0.000         0.092                0         394      5.066 [s]
+[13'01'19]  INFO     Experiment     :    10.000        -1.384               24         409     50.329 [s]
+[13'01'27]  INFO     Experiment     :    20.000        -4.023               12         412     58.174 [s]
+[13'01'35]  INFO     Experiment     :    30.000        -6.332                2         412     65.951 [s]
+[13'01'42]  INFO     Experiment     :    40.000        -8.025                0         412     73.684 [s]
+[13'01'50]  INFO     Experiment     :    50.000        -9.070                1         412     81.297 [s]
+[13'01'58]  INFO     Experiment     :    60.000        -9.642                0         412     88.814 [s]
+[13'02'05]  INFO     Experiment     :    70.000        -9.718                1         412     96.159 [s]
+[13'02'12]  INFO     Experiment     :    80.000        -9.162                0         412    103.369 [s]
+[13'02'19]  INFO     Experiment     :    90.000        -8.364                0         412    110.460 [s]
+[13'02'26]  INFO     Experiment     :   100.000        -7.385                1         412    117.422 [s]
+[13'02'26]  INFO     Experiment     : -------------------------------------------------------------------
+[13'02'26]  INFO     Experiment     : Time real: 117.422 [s]
+[13'02'26]  INFO     Experiment     : Final interaction number: 41
+[13'02'26]  INFO        Main        : Event 1
+[13'02'26]  INFO     Experiment     : random number seed: 8802184768815848732
+[13'02'26]  INFO      Collider      : Impact parameter = 14.7269 fm
+[13'02'26]  INFO      Collider      : Fermi motion is ON.
+[13'02'26]  INFO     Experiment     : -------------------------------------------------------------------
+[13'02'26]  INFO     Experiment     : Time [fm]   Ediff [GeV]    Scatt.|Decays   Particles         Timing
+[13'02'26]  INFO     Experiment     : -------------------------------------------------------------------
+[13'02'26]  INFO     Experiment     :    -2.062         0.000                0         394    117.423 [s]
+[13'02'28]  INFO     Experiment     :     0.000        -0.109                0         394    119.035 [s]
+[13'02'35]  INFO     Experiment     :    10.000        -2.998                0         394    126.767 [s]
+[13'02'43]  INFO     Experiment     :    20.000        -6.670                0         394    134.443 [s]
+[13'02'51]  INFO     Experiment     :    30.000        -8.452                0         394    142.001 [s]
+[13'02'58]  INFO     Experiment     :    40.000        -8.126                0         394    149.420 [s]
+[13'03'05]  INFO     Experiment     :    50.000        -7.108                0         394    156.695 [s]
+[13'03'13]  INFO     Experiment     :    60.000        -6.752                0         394    163.830 [s]
+[13'03'20]  INFO     Experiment     :    70.000        -6.351                0         394    170.815 [s]
+[13'03'26]  INFO     Experiment     :    80.000        -5.999                0         394    177.682 [s]
+[13'03'33]  INFO     Experiment     :    90.000        -5.594                0         394    184.422 [s]
+[13'03'40]  INFO     Experiment     :   100.000        -5.157                0         394    191.069 [s]
+[13'03'40]  INFO     Experiment     : -------------------------------------------------------------------
+[13'03'40]  INFO     Experiment     : Time real: 191.069 [s]
+[13'03'40]  INFO     Experiment     : Final interaction number: 0
+[13'03'40]  INFO        Main        : Event 2
+[13'03'40]  INFO     Experiment     : random number seed: 2833853229545459178
+[13'03'40]  INFO      Collider      : Impact parameter = 17.9399 fm
+[13'03'40]  INFO      Collider      : Fermi motion is ON.
+[13'03'40]  INFO     Experiment     : -------------------------------------------------------------------
+[13'03'40]  INFO     Experiment     : Time [fm]   Ediff [GeV]    Scatt.|Decays   Particles         Timing
+[13'03'40]  INFO     Experiment     : -------------------------------------------------------------------
+[13'03'40]  INFO     Experiment     :    -2.062         0.000                0         394    191.070 [s]
+[13'03'41]  INFO     Experiment     :     0.000        -0.052                0         394    192.674 [s]
+[13'03'49]  INFO     Experiment     :    10.000        -3.215                0         394    200.440 [s]
+[13'03'57]  INFO     Experiment     :    20.000        -6.475                0         394    208.163 [s]
+[13'04'05]  INFO     Experiment     :    30.000        -8.650                0         394    215.825 [s]
+[13'04'12]  INFO     Experiment     :    40.000       -10.250                0         394    223.319 [s]
+[13'04'19]  INFO     Experiment     :    50.000       -10.455                0         394    230.691 [s]
+[13'04'27]  INFO     Experiment     :    60.000       -10.048                0         394    237.916 [s]
+[13'04'34]  INFO     Experiment     :    70.000        -9.506                0         394    244.976 [s]
+[13'04'41]  INFO     Experiment     :    80.000        -8.670                0         394    251.899 [s]
+[13'04'47]  INFO     Experiment     :    90.000        -7.409                0         394    258.719 [s]
+[13'04'54]  INFO     Experiment     :   100.000        -6.537                0         394    265.465 [s]
+[13'04'54]  INFO     Experiment     : -------------------------------------------------------------------
+[13'04'54]  INFO     Experiment     : Time real: 265.465 [s]
+[13'04'54]  INFO     Experiment     : Final interaction number: 0
+[13'04'54]  INFO        Main        : Event 3
+[13'04'54]  INFO     Experiment     : random number seed: 6859523827399953509
+[13'04'54]  INFO      Collider      : Impact parameter = 16.063 fm
+[13'04'54]  INFO      Collider      : Fermi motion is ON.
+[13'04'54]  INFO     Experiment     : -------------------------------------------------------------------
+[13'04'54]  INFO     Experiment     : Time [fm]   Ediff [GeV]    Scatt.|Decays   Particles         Timing
+[13'04'54]  INFO     Experiment     : -------------------------------------------------------------------
+[13'04'54]  INFO     Experiment     :    -2.062         0.000                0         394    265.466 [s]
+[13'04'56]  INFO     Experiment     :     0.000        -0.298                0         394    267.068 [s]
+[13'05'04]  INFO     Experiment     :    10.000        -2.956                0         394    274.798 [s]
+[13'05'11]  INFO     Experiment     :    20.000        -5.278                0         394    282.510 [s]
+[13'05'19]  INFO     Experiment     :    30.000        -5.704                0         394    290.133 [s]
+[13'05'26]  INFO     Experiment     :    40.000        -5.134                0         394    297.624 [s]
+[13'05'34]  INFO     Experiment     :    50.000        -4.820                0         394    304.977 [s]
+[13'05'41]  INFO     Experiment     :    60.000        -4.489                0         394    312.198 [s]
+[13'05'48]  INFO     Experiment     :    70.000        -4.212                0         394    319.289 [s]
+[13'05'55]  INFO     Experiment     :    80.000        -4.209                0         394    326.271 [s]
+[13'06'02]  INFO     Experiment     :    90.000        -3.878                0         394    333.139 [s]
+[13'06'09]  INFO     Experiment     :   100.000        -3.213                0         394    339.880 [s]
+[13'06'09]  INFO     Experiment     : -------------------------------------------------------------------
+[13'06'09]  INFO     Experiment     : Time real: 339.88 [s]
+[13'06'09]  INFO     Experiment     : Final interaction number: 0
+[13'06'09]  INFO        Main        : Event 4
+[13'06'09]  INFO     Experiment     : random number seed: 6541182662930746809
+[13'06'09]  INFO      Collider      : Impact parameter = 10.2042 fm
+[13'06'09]  INFO      Collider      : Fermi motion is ON.
+[13'06'09]  INFO     Experiment     : -------------------------------------------------------------------
+[13'06'09]  INFO     Experiment     : Time [fm]   Ediff [GeV]    Scatt.|Decays   Particles         Timing
+[13'06'09]  INFO     Experiment     : -------------------------------------------------------------------
+[13'06'09]  INFO     Experiment     :    -2.062         0.000                0         394    339.880 [s]
+[13'06'10]  INFO     Experiment     :     0.000         0.045                0         394    341.456 [s]
+ PYTHIA Error in MiniStringFragmentation::fragment: no 1- or 2-body state found above mass threshold  
+ PYTHIA Error in Pythia::forceHadronLevel: hadronLevel failed; try again  
+ PYTHIA Abort from Pythia::forceHadronLevel: hadronLevel failed; giving up  
+ PYTHIA Warning in JunctionSplitting::CheckColours: not-a-number energy/momentum/mass  
+ PYTHIA Error in HadronLevel::next: failed colour/junction check  
+[13'06'32]  INFO     Experiment     :    10.000        -4.047              362         512    363.102 [s]
+[13'06'41]  INFO     Experiment     :    20.000        -5.249              165         538    372.044 [s]
+[13'06'50]  INFO     Experiment     :    30.000        -5.253               69         554    381.073 [s]
+[13'06'59]  INFO     Experiment     :    40.000        -6.147               27         560    390.014 [s]
+[13'07'07]  INFO     Experiment     :    50.000        -6.214               18         560    398.752 [s]
+[13'07'16]  INFO     Experiment     :    60.000        -6.356               10         561    407.286 [s]
+[13'07'24]  INFO     Experiment     :    70.000        -5.868                8         562    415.725 [s]
+[13'07'33]  INFO     Experiment     :    80.000        -4.985                6         564    424.008 [s]
+[13'07'41]  INFO     Experiment     :    90.000        -4.052                0         564    432.123 [s]
+[13'07'49]  INFO     Experiment     :   100.000        -3.264                0         564    440.162 [s]
+[13'07'49]  INFO     Experiment     : -------------------------------------------------------------------
+[13'07'49]  INFO     Experiment     : Time real: 440.162 [s]
+[13'07'49]  INFO     Experiment     : Final interaction number: 665
+[13'07'49]  INFO        Main        : Event 5
+[13'07'49]  INFO     Experiment     : random number seed: 6994300259791766419
+[13'07'49]  INFO      Collider      : Impact parameter = 7.10058 fm
+[13'07'49]  INFO      Collider      : Fermi motion is ON.
+[13'07'49]  INFO     Experiment     : -------------------------------------------------------------------
+[13'07'49]  INFO     Experiment     : Time [fm]   Ediff [GeV]    Scatt.|Decays   Particles         Timing
+[13'07'49]  INFO     Experiment     : -------------------------------------------------------------------
+[13'07'49]  INFO     Experiment     :    -2.062         0.000                0         394    440.162 [s]
+[13'07'51]  INFO     Experiment     :     0.000         0.104                0         394    441.776 [s]
+[13'08'03]  INFO     Experiment     :    10.000       -11.183             1145         682    453.779 [s]
+[13'08'14]  INFO     Experiment     :    20.000       -13.067              637         786    464.884 [s]
+[13'08'25]  INFO     Experiment     :    30.000       -12.816              281         836    475.919 [s]
+[13'08'36]  INFO     Experiment     :    40.000       -12.683               98         864    486.876 [s]
+[13'08'46]  INFO     Experiment     :    50.000       -11.683               52         868    497.674 [s]
+[13'08'57]  INFO     Experiment     :    60.000       -10.619               23         870    508.264 [s]
+[13'09'07]  INFO     Experiment     :    70.000        -9.955               11         869    518.754 [s]
+[13'09'18]  INFO     Experiment     :    80.000        -9.638               21         882    529.244 [s]
+[13'09'28]  INFO     Experiment     :    90.000        -9.037                4         883    539.610 [s]
+[13'09'39]  INFO     Experiment     :   100.000        -8.353               15         897    549.963 [s]
+[13'09'39]  INFO     Experiment     : -------------------------------------------------------------------
+[13'09'39]  INFO     Experiment     : Time real: 549.963 [s]
+[13'09'39]  INFO     Experiment     : Final interaction number: 2287
+[13'09'39]  INFO        Main        : Event 6
+[13'09'39]  INFO     Experiment     : random number seed: 1939092582712462153
+[13'09'39]  INFO      Collider      : Impact parameter = 8.33645 fm
+[13'09'39]  INFO      Collider      : Fermi motion is ON.
+[13'09'39]  INFO     Experiment     : -------------------------------------------------------------------
+[13'09'39]  INFO     Experiment     : Time [fm]   Ediff [GeV]    Scatt.|Decays   Particles         Timing
+[13'09'39]  INFO     Experiment     : -------------------------------------------------------------------
+[13'09'39]  INFO     Experiment     :    -2.062         0.000                0         394    549.964 [s]
+[13'09'40]  INFO     Experiment     :     0.000        -0.278                0         394    551.585 [s]
+[13'09'50]  INFO     Experiment     :    10.000        -8.026              651         562    561.754 [s]
+[13'10'00]  INFO     Experiment     :    20.000       -10.118              303         601    571.372 [s]
+[13'10'10]  INFO     Experiment     :    30.000       -10.491              113         620    580.870 [s]
+[13'10'19]  INFO     Experiment     :    40.000       -10.693               75         629    590.221 [s]
+[13'10'28]  INFO     Experiment     :    50.000       -10.752               43         626    599.294 [s]
+[13'10'37]  INFO     Experiment     :    60.000       -10.150               29         634     10.136 [min]
+[13'10'46]  INFO     Experiment     :    70.000        -8.659                9         635     10.282 [min]
+[13'10'54]  INFO     Experiment     :    80.000        -7.714               10         636     10.425 [min]
+[13'11'03]  INFO     Experiment     :    90.000        -7.494                5         638     10.566 [min]
+[13'11'11]  INFO     Experiment     :   100.000        -6.734                8         641     10.706 [min]
+[13'11'11]  INFO     Experiment     : -------------------------------------------------------------------
+[13'11'11]  INFO     Experiment     : Time real: 10.7062 [min]
+[13'11'11]  INFO     Experiment     : Final interaction number: 1246
+[13'11'11]  INFO        Main        : Event 7
+[13'11'11]  INFO     Experiment     : random number seed: 2199238919033294237
+[13'11'11]  INFO      Collider      : Impact parameter = 7.79605 fm
+[13'11'11]  INFO      Collider      : Fermi motion is ON.
+[13'11'11]  INFO     Experiment     : -------------------------------------------------------------------
+[13'11'11]  INFO     Experiment     : Time [fm]   Ediff [GeV]    Scatt.|Decays   Particles         Timing
+[13'11'11]  INFO     Experiment     : -------------------------------------------------------------------
+[13'11'11]  INFO     Experiment     :    -2.062         0.000                0         394     10.707 [min]
+[13'11'13]  INFO     Experiment     :     0.000         0.137                0         394     10.735 [min]
+[13'11'24]  INFO     Experiment     :    10.000        -8.119              873         619     10.916 [min]
+[13'11'34]  INFO     Experiment     :    20.000        -7.942              416         694     11.086 [min]
+[13'11'44]  INFO     Experiment     :    30.000        -7.886              156         728     11.255 [min]
+[13'11'54]  INFO     Experiment     :    40.000        -7.991               74         736     11.420 [min]
+[13'12'04]  INFO     Experiment     :    50.000        -7.597               38         742     11.581 [min]
+[13'12'13]  INFO     Experiment     :    60.000        -6.967               28         745     11.740 [min]
+[13'12'23]  INFO     Experiment     :    70.000        -6.511               10         749     11.898 [min]
+[13'12'32]  INFO     Experiment     :    80.000        -5.906                8         754     12.055 [min]
+[13'12'41]  INFO     Experiment     :    90.000        -5.227                5         756     12.211 [min]
+[13'12'51]  INFO     Experiment     :   100.000        -4.741                4         758     12.367 [min]
+[13'12'51]  INFO     Experiment     : -------------------------------------------------------------------
+[13'12'51]  INFO     Experiment     : Time real: 12.3672 [min]
+[13'12'51]  INFO     Experiment     : Final interaction number: 1612
+[13'12'51]  INFO        Main        : Event 8
+[13'12'51]  INFO     Experiment     : random number seed: 8649047165046894495
+[13'12'51]  INFO      Collider      : Impact parameter = 13.7447 fm
+[13'12'51]  INFO      Collider      : Fermi motion is ON.
+[13'12'51]  INFO     Experiment     : -------------------------------------------------------------------
+[13'12'51]  INFO     Experiment     : Time [fm]   Ediff [GeV]    Scatt.|Decays   Particles         Timing
+[13'12'51]  INFO     Experiment     : -------------------------------------------------------------------
+[13'12'51]  INFO     Experiment     :    -2.062         0.000                0         394     12.367 [min]
+[13'12'52]  INFO     Experiment     :     0.000        -0.356                0         394     12.394 [min]
+[13'13'00]  INFO     Experiment     :    10.000        -3.441                6         400     12.523 [min]
+[13'13'08]  INFO     Experiment     :    20.000        -5.546                8         399     12.652 [min]
+[13'13'16]  INFO     Experiment     :    30.000        -5.836                0         399     12.781 [min]
+[13'13'23]  INFO     Experiment     :    40.000        -5.474                1         399     12.909 [min]
+[13'13'31]  INFO     Experiment     :    50.000        -5.679                1         399     13.036 [min]
+[13'13'38]  INFO     Experiment     :    60.000        -5.690                0         399     13.159 [min]
+[13'13'46]  INFO     Experiment     :    70.000        -5.470                0         399     13.280 [min]
+[13'13'53]  INFO     Experiment     :    80.000        -5.058                0         399     13.399 [min]
+[13'14'00]  INFO     Experiment     :    90.000        -4.687                0         399     13.515 [min]
+[13'14'07]  INFO     Experiment     :   100.000        -4.497                0         399     13.630 [min]
+[13'14'07]  INFO     Experiment     : -------------------------------------------------------------------
+[13'14'07]  INFO     Experiment     : Time real: 13.6302 [min]
+[13'14'07]  INFO     Experiment     : Final interaction number: 16
+[13'14'07]  INFO        Main        : Event 9
+[13'14'07]  INFO     Experiment     : random number seed: 7747292603204456267
+[13'14'07]  INFO      Collider      : Impact parameter = 13.7146 fm
+[13'14'07]  INFO      Collider      : Fermi motion is ON.
+[13'14'07]  INFO     Experiment     : -------------------------------------------------------------------
+[13'14'07]  INFO     Experiment     : Time [fm]   Ediff [GeV]    Scatt.|Decays   Particles         Timing
+[13'14'07]  INFO     Experiment     : -------------------------------------------------------------------
+[13'14'07]  INFO     Experiment     :    -2.062         0.000                0         394     13.630 [min]
+[13'14'08]  INFO     Experiment     :     0.000        -0.030                0         394     13.657 [min]
+[13'14'16]  INFO     Experiment     :    10.000        -2.202                0         394     13.785 [min]
+[13'14'23]  INFO     Experiment     :    20.000        -5.230                0         394     13.912 [min]
+[13'14'31]  INFO     Experiment     :    30.000        -7.550                0         394     14.037 [min]
+[13'14'38]  INFO     Experiment     :    40.000        -8.098                0         394     14.160 [min]
+[13'14'46]  INFO     Experiment     :    50.000        -7.438                0         394     14.280 [min]
+[13'14'53]  INFO     Experiment     :    60.000        -6.363                0         394     14.398 [min]
+[13'15'00]  INFO     Experiment     :    70.000        -5.086                0         394     14.513 [min]
+[13'15'06]  INFO     Experiment     :    80.000        -4.326                0         394     14.627 [min]
+[13'15'13]  INFO     Experiment     :    90.000        -3.867                0         394     14.738 [min]
+[13'15'20]  INFO     Experiment     :   100.000        -3.132                0         394     14.848 [min]
+[13'15'20]  INFO     Experiment     : -------------------------------------------------------------------
+[13'15'20]  INFO     Experiment     : Time real: 14.8481 [min]
+[13'15'20]  INFO     Experiment     : Final interaction number: 0
+[13'15'20]  INFO        Main        : Event 10
+[13'15'20]  INFO     Experiment     : random number seed: 4848621329663246734
+[13'15'20]  INFO      Collider      : Impact parameter = 14.6277 fm
+[13'15'20]  INFO      Collider      : Fermi motion is ON.
+[13'15'20]  INFO     Experiment     : -------------------------------------------------------------------
+[13'15'20]  INFO     Experiment     : Time [fm]   Ediff [GeV]    Scatt.|Decays   Particles         Timing
+[13'15'20]  INFO     Experiment     : -------------------------------------------------------------------
+[13'15'20]  INFO     Experiment     :    -2.062         0.000                0         394     14.848 [min]
+[13'15'21]  INFO     Experiment     :     0.000        -0.117                0         394     14.875 [min]
+[13'15'29]  INFO     Experiment     :    10.000        -2.221                0         394     15.004 [min]
+[13'15'37]  INFO     Experiment     :    20.000        -3.627                0         394     15.133 [min]
+[13'15'44]  INFO     Experiment     :    30.000        -3.396                0         394     15.260 [min]
+[13'15'52]  INFO     Experiment     :    40.000        -3.379                0         394     15.385 [min]
+[13'15'59]  INFO     Experiment     :    50.000        -3.501                0         394     15.508 [min]
+[13'16'06]  INFO     Experiment     :    60.000        -3.136                0         394     15.629 [min]
+[13'16'14]  INFO     Experiment     :    70.000        -3.159                0         394     15.747 [min]
+[13'16'21]  INFO     Experiment     :    80.000        -3.131                0         394     15.863 [min]
+[13'16'27]  INFO     Experiment     :    90.000        -2.662                0         394     15.977 [min]
+[13'16'34]  INFO     Experiment     :   100.000        -1.918                0         394     16.090 [min]
+[13'16'34]  INFO     Experiment     : -------------------------------------------------------------------
+[13'16'34]  INFO     Experiment     : Time real: 16.0896 [min]
+[13'16'34]  INFO     Experiment     : Final interaction number: 0
+[13'16'34]  INFO        Main        : Event 11
+[13'16'34]  INFO     Experiment     : random number seed: 734429035704347616
+[13'16'34]  INFO      Collider      : Impact parameter = 11.0351 fm
+[13'16'34]  INFO      Collider      : Fermi motion is ON.
+[13'16'34]  INFO     Experiment     : -------------------------------------------------------------------
+[13'16'34]  INFO     Experiment     : Time [fm]   Ediff [GeV]    Scatt.|Decays   Particles         Timing
+[13'16'34]  INFO     Experiment     : -------------------------------------------------------------------
+[13'16'34]  INFO     Experiment     :    -2.062         0.000                0         394     16.090 [min]
+[13'16'36]  INFO     Experiment     :     0.000         0.033                0         394     16.116 [min]
+[13'16'44]  INFO     Experiment     :    10.000        -3.292              290         499     16.262 [min]
+[13'16'53]  INFO     Experiment     :    20.000        -5.451              123         521     16.406 [min]
+[13'17'02]  INFO     Experiment     :    30.000        -5.232               50         530     16.549 [min]
+[13'17'10]  INFO     Experiment     :    40.000        -4.486               29         533     16.692 [min]
+[13'17'19]  INFO     Experiment     :    50.000        -3.677               33         540     16.832 [min]
+[13'17'27]  INFO     Experiment     :    60.000        -2.927               20         548     16.972 [min]
+[13'17'35]  INFO     Experiment     :    70.000        -2.778                5         547     17.108 [min]
+[13'17'43]  INFO     Experiment     :    80.000        -1.833                4         546     17.242 [min]
+[13'17'51]  INFO     Experiment     :    90.000        -0.359                3         547     17.373 [min]
+[13'17'59]  INFO     Experiment     :   100.000         0.772                7         550     17.502 [min]
+[13'17'59]  INFO     Experiment     : -------------------------------------------------------------------
+[13'17'59]  INFO     Experiment     : Time real: 17.502 [min]
+[13'17'59]  INFO     Experiment     : Final interaction number: 564
+[13'17'59]  INFO        Main        : Event 12
+[13'17'59]  INFO     Experiment     : random number seed: 2854993891601518616
+[13'17'59]  INFO      Collider      : Impact parameter = 14.3796 fm
+[13'17'59]  INFO      Collider      : Fermi motion is ON.
+[13'17'59]  INFO     Experiment     : -------------------------------------------------------------------
+[13'17'59]  INFO     Experiment     : Time [fm]   Ediff [GeV]    Scatt.|Decays   Particles         Timing
+[13'17'59]  INFO     Experiment     : -------------------------------------------------------------------
+[13'17'59]  INFO     Experiment     :    -2.062         0.000                0         394     17.502 [min]
+[13'18'00]  INFO     Experiment     :     0.000        -0.143                0         394     17.528 [min]
+[13'18'08]  INFO     Experiment     :    10.000        -1.321               12         405     17.658 [min]
+[13'18'16]  INFO     Experiment     :    20.000        -3.170                4         406     17.787 [min]
+[13'18'24]  INFO     Experiment     :    30.000        -4.436                1         407     17.915 [min]
+[13'18'31]  INFO     Experiment     :    40.000        -4.799                0         407     18.043 [min]
+[13'18'39]  INFO     Experiment     :    50.000        -4.871                0         407     18.168 [min]
+[13'18'46]  INFO     Experiment     :    60.000        -4.775                0         407     18.292 [min]
+[13'18'54]  INFO     Experiment     :    70.000        -4.576                0         407     18.414 [min]
+[13'19'01]  INFO     Experiment     :    80.000        -4.677                0         407     18.534 [min]
+[13'19'08]  INFO     Experiment     :    90.000        -4.793                0         407     18.651 [min]
+[13'19'15]  INFO     Experiment     :   100.000        -4.034                0         407     18.767 [min]
+[13'19'15]  INFO     Experiment     : -------------------------------------------------------------------
+[13'19'15]  INFO     Experiment     : Time real: 18.7671 [min]
+[13'19'15]  INFO     Experiment     : Final interaction number: 17
+[13'19'15]  INFO        Main        : Event 13
+[13'19'15]  INFO     Experiment     : random number seed: 3937218706901190321
+[13'19'15]  INFO      Collider      : Impact parameter = 8.72274 fm
+[13'19'15]  INFO      Collider      : Fermi motion is ON.
+[13'19'15]  INFO     Experiment     : -------------------------------------------------------------------
+[13'19'15]  INFO     Experiment     : Time [fm]   Ediff [GeV]    Scatt.|Decays   Particles         Timing
+[13'19'15]  INFO     Experiment     : -------------------------------------------------------------------
+[13'19'15]  INFO     Experiment     :    -2.062         0.000                0         394     18.767 [min]
+[13'19'16]  INFO     Experiment     :     0.000        -0.273                0         394     18.793 [min]
+[13'19'26]  INFO     Experiment     :    10.000        -5.196              619         559     18.955 [min]
+[13'19'35]  INFO     Experiment     :    20.000        -8.328              297         609     19.112 [min]
+[13'19'45]  INFO     Experiment     :    30.000        -8.761              115         616     19.267 [min]
+[13'19'54]  INFO     Experiment     :    40.000        -9.451               84         624     19.419 [min]
+[13'20'03]  INFO     Experiment     :    50.000        -9.766               35         634     19.569 [min]
+[13'20'12]  INFO     Experiment     :    60.000        -9.089               29         631     19.716 [min]
+[13'20'20]  INFO     Experiment     :    70.000        -8.193               13         634     19.861 [min]
+[13'20'29]  INFO     Experiment     :    80.000        -7.311                9         634     20.005 [min]
+[13'20'38]  INFO     Experiment     :    90.000        -6.832                4         634     20.147 [min]
+[13'20'46]  INFO     Experiment     :   100.000        -6.719               10         642     20.287 [min]
+[13'20'46]  INFO     Experiment     : -------------------------------------------------------------------
+[13'20'46]  INFO     Experiment     : Time real: 20.2874 [min]
+[13'20'46]  INFO     Experiment     : Final interaction number: 1215
+[13'20'46]  INFO        Main        : Event 14
+[13'20'46]  INFO     Experiment     : random number seed: 1770973964431829195
+[13'20'46]  INFO      Collider      : Impact parameter = 6.79284 fm
+[13'20'46]  INFO      Collider      : Fermi motion is ON.
+[13'20'46]  INFO     Experiment     : -------------------------------------------------------------------
+[13'20'46]  INFO     Experiment     : Time [fm]   Ediff [GeV]    Scatt.|Decays   Particles         Timing
+[13'20'46]  INFO     Experiment     : -------------------------------------------------------------------
+[13'20'46]  INFO     Experiment     :    -2.062         0.000                0         394     20.288 [min]
+[13'20'48]  INFO     Experiment     :     0.000        -0.115                0         394     20.313 [min]
+[13'20'59]  INFO     Experiment     :    10.000       -10.056             1232         730     20.511 [min]
+[13'21'10]  INFO     Experiment     :    20.000       -11.201              598         810     20.692 [min]
+[13'21'21]  INFO     Experiment     :    30.000       -11.203              187         854     20.874 [min]
+[13'21'32]  INFO     Experiment     :    40.000       -10.157               76         857     21.054 [min]
+[13'21'43]  INFO     Experiment     :    50.000        -9.526               59         867     21.233 [min]
+[13'21'53]  INFO     Experiment     :    60.000        -8.663               24         869     21.410 [min]
+[13'22'04]  INFO     Experiment     :    70.000        -7.772               21         877     21.585 [min]
+[13'22'14]  INFO     Experiment     :    80.000        -6.895               10         880     21.758 [min]
+[13'22'25]  INFO     Experiment     :    90.000        -6.462                7         882     21.931 [min]
+[13'22'35]  INFO     Experiment     :   100.000        -6.316               15         892     22.102 [min]
+[13'22'35]  INFO     Experiment     : -------------------------------------------------------------------
+[13'22'35]  INFO     Experiment     : Time real: 22.1018 [min]
+[13'22'35]  INFO     Experiment     : Final interaction number: 2229
+[13'22'35]  INFO        Main        : Event 15
+[13'22'35]  INFO     Experiment     : random number seed: 1057000239527239615
+[13'22'35]  INFO      Collider      : Impact parameter = 16.3006 fm
+[13'22'35]  INFO      Collider      : Fermi motion is ON.
+[13'22'35]  INFO     Experiment     : -------------------------------------------------------------------
+[13'22'35]  INFO     Experiment     : Time [fm]   Ediff [GeV]    Scatt.|Decays   Particles         Timing
+[13'22'35]  INFO     Experiment     : -------------------------------------------------------------------
+[13'22'35]  INFO     Experiment     :    -2.062         0.000                0         394     22.102 [min]
+[13'22'36]  INFO     Experiment     :     0.000        -0.241                0         394     22.129 [min]
+[13'22'44]  INFO     Experiment     :    10.000        -3.606                0         394     22.259 [min]
+[13'22'52]  INFO     Experiment     :    20.000        -7.873                0         394     22.388 [min]
+[13'23'00]  INFO     Experiment     :    30.000        -9.342                0         394     22.516 [min]
+[13'23'07]  INFO     Experiment     :    40.000        -9.561                0         394     22.641 [min]
+[13'23'15]  INFO     Experiment     :    50.000       -10.148                0         394     22.765 [min]
+[13'23'22]  INFO     Experiment     :    60.000       -10.417                0         394     22.885 [min]
+[13'23'29]  INFO     Experiment     :    70.000       -10.313                0         394     23.004 [min]
+[13'23'36]  INFO     Experiment     :    80.000       -10.062                0         394     23.120 [min]
+[13'23'43]  INFO     Experiment     :    90.000        -9.631                0         394     23.233 [min]
+[13'23'49]  INFO     Experiment     :   100.000        -9.064                0         394     23.345 [min]
+[13'23'49]  INFO     Experiment     : -------------------------------------------------------------------
+[13'23'49]  INFO     Experiment     : Time real: 23.3453 [min]
+[13'23'49]  INFO     Experiment     : Final interaction number: 0
+[13'23'49]  INFO        Main        : Event 16
+[13'23'49]  INFO     Experiment     : random number seed: 5376715865758273765
+[13'23'49]  INFO      Collider      : Impact parameter = 17.9681 fm
+[13'23'49]  INFO      Collider      : Fermi motion is ON.
+[13'23'49]  INFO     Experiment     : -------------------------------------------------------------------
+[13'23'49]  INFO     Experiment     : Time [fm]   Ediff [GeV]    Scatt.|Decays   Particles         Timing
+[13'23'49]  INFO     Experiment     : -------------------------------------------------------------------
+[13'23'49]  INFO     Experiment     :    -2.062         0.000                0         394     23.345 [min]
+[13'23'51]  INFO     Experiment     :     0.000         0.094                0         394     23.371 [min]
+[13'23'59]  INFO     Experiment     :    10.000        -0.910                0         394     23.498 [min]
+[13'24'06]  INFO     Experiment     :    20.000        -2.677                0         394     23.624 [min]
+[13'24'14]  INFO     Experiment     :    30.000        -3.325                0         394     23.749 [min]
+[13'24'21]  INFO     Experiment     :    40.000        -3.791                0         394     23.872 [min]
+[13'24'28]  INFO     Experiment     :    50.000        -4.748                0         394     23.993 [min]
+[13'24'35]  INFO     Experiment     :    60.000        -4.773                0         394     24.112 [min]
+[13'24'42]  INFO     Experiment     :    70.000        -4.228                0         394     24.228 [min]
+[13'24'49]  INFO     Experiment     :    80.000        -3.738                0         394     24.343 [min]
+[13'24'56]  INFO     Experiment     :    90.000        -3.058                0         394     24.456 [min]
+[13'25'03]  INFO     Experiment     :   100.000        -2.265                0         394     24.567 [min]
+[13'25'03]  INFO     Experiment     : -------------------------------------------------------------------
+[13'25'03]  INFO     Experiment     : Time real: 24.5666 [min]
+[13'25'03]  INFO     Experiment     : Final interaction number: 0
+[13'25'03]  INFO        Main        : Event 17
+[13'25'03]  INFO     Experiment     : random number seed: 1919636392774550457
+[13'25'03]  INFO      Collider      : Impact parameter = 6.91528 fm
+[13'25'03]  INFO      Collider      : Fermi motion is ON.
+[13'25'03]  INFO     Experiment     : -------------------------------------------------------------------
+[13'25'03]  INFO     Experiment     : Time [fm]   Ediff [GeV]    Scatt.|Decays   Particles         Timing
+[13'25'03]  INFO     Experiment     : -------------------------------------------------------------------
+[13'25'03]  INFO     Experiment     :    -2.062         0.000                0         394     24.567 [min]
+[13'25'04]  INFO     Experiment     :     0.000        -0.060                0         394     24.593 [min]
+[13'25'27]  INFO     Experiment     :    10.000        -9.235             1067         666     24.968 [min]
+[13'25'37]  INFO     Experiment     :    20.000       -12.443              577         750     25.145 [min]
+[13'25'48]  INFO     Experiment     :    30.000       -12.482              170         780     25.319 [min]
+[13'25'58]  INFO     Experiment     :    40.000       -12.587               70         798     25.490 [min]
+[13'26'08]  INFO     Experiment     :    50.000       -12.664               51         811     25.658 [min]
+[13'26'18]  INFO     Experiment     :    60.000       -11.976               24         819     25.824 [min]
+[13'26'28]  INFO     Experiment     :    70.000       -10.997               11         819     25.987 [min]
+[13'26'38]  INFO     Experiment     :    80.000       -10.187                3         820     26.149 [min]
+[13'26'47]  INFO     Experiment     :    90.000        -9.704                1         821     26.310 [min]
+[13'26'57]  INFO     Experiment     :   100.000        -9.666                2         823     26.470 [min]
+[13'26'57]  INFO     Experiment     : -------------------------------------------------------------------
+[13'26'57]  INFO     Experiment     : Time real: 26.4697 [min]
+[13'26'57]  INFO     Experiment     : Final interaction number: 1976
+[13'26'57]  INFO        Main        : Event 18
+[13'26'57]  INFO     Experiment     : random number seed: 976358558693349822
+[13'26'57]  INFO      Collider      : Impact parameter = 11.9698 fm
+[13'26'57]  INFO      Collider      : Fermi motion is ON.
+[13'26'57]  INFO     Experiment     : -------------------------------------------------------------------
+[13'26'57]  INFO     Experiment     : Time [fm]   Ediff [GeV]    Scatt.|Decays   Particles         Timing
+[13'26'57]  INFO     Experiment     : -------------------------------------------------------------------
+[13'26'57]  INFO     Experiment     :    -2.062         0.000                0         394     26.470 [min]
+[13'26'59]  INFO     Experiment     :     0.000        -0.283                0         394     26.496 [min]
+[13'27'06]  INFO     Experiment     :    10.000        -3.039               52         423     26.629 [min]
+[13'27'14]  INFO     Experiment     :    20.000        -5.096               21         429     26.762 [min]
+[13'27'22]  INFO     Experiment     :    30.000        -5.955                7         430     26.894 [min]
+[13'27'30]  INFO     Experiment     :    40.000        -6.148                7         429     27.025 [min]
+[13'27'38]  INFO     Experiment     :    50.000        -6.412                8         428     27.154 [min]
+[13'27'46]  INFO     Experiment     :    60.000        -6.258                6         430     27.281 [min]
+[13'27'53]  INFO     Experiment     :    70.000        -5.739                1         430     27.407 [min]
+[13'28'01]  INFO     Experiment     :    80.000        -5.723                1         430     27.530 [min]
+[13'28'08]  INFO     Experiment     :    90.000        -5.111                2         430     27.651 [min]
+[13'28'15]  INFO     Experiment     :   100.000        -4.125                2         431     27.770 [min]
+[13'28'15]  INFO     Experiment     : -------------------------------------------------------------------
+[13'28'15]  INFO     Experiment     : Time real: 27.7699 [min]
+[13'28'15]  INFO     Experiment     : Final interaction number: 107
+[13'28'15]  INFO        Main        : Event 19
+[13'28'15]  INFO     Experiment     : random number seed: 4022114794860124958
+[13'28'15]  INFO      Collider      : Impact parameter = 13.1341 fm
+[13'28'15]  INFO      Collider      : Fermi motion is ON.
+[13'28'15]  INFO     Experiment     : -------------------------------------------------------------------
+[13'28'15]  INFO     Experiment     : Time [fm]   Ediff [GeV]    Scatt.|Decays   Particles         Timing
+[13'28'15]  INFO     Experiment     : -------------------------------------------------------------------
+[13'28'15]  INFO     Experiment     :    -2.062         0.000                0         394     27.770 [min]
+[13'28'16]  INFO     Experiment     :     0.000         0.050                0         394     27.796 [min]
+[13'28'24]  INFO     Experiment     :    10.000        -0.914               16         403     27.924 [min]
+[13'28'32]  INFO     Experiment     :    20.000        -2.840               10         403     28.052 [min]
+[13'28'39]  INFO     Experiment     :    30.000        -4.350                6         403     28.179 [min]
+[13'28'47]  INFO     Experiment     :    40.000        -4.989               11         404     28.305 [min]
+[13'28'54]  INFO     Experiment     :    50.000        -5.260                3         404     28.429 [min]
+[13'29'02]  INFO     Experiment     :    60.000        -5.512                7         404     28.552 [min]
+[13'29'09]  INFO     Experiment     :    70.000        -5.209                2         404     28.673 [min]
+[13'29'16]  INFO     Experiment     :    80.000        -4.319                0         404     28.792 [min]
+[13'29'23]  INFO     Experiment     :    90.000        -3.571                0         404     28.908 [min]
+[13'29'30]  INFO     Experiment     :   100.000        -3.269                0         404     29.023 [min]
+[13'29'30]  INFO     Experiment     : -------------------------------------------------------------------
+[13'29'30]  INFO     Experiment     : Time real: 29.0234 [min]
+[13'29'30]  INFO     Experiment     : Final interaction number: 55
+[13'29'30]  INFO        Main        : Event 20
+[13'29'30]  INFO     Experiment     : random number seed: 3152766067097781863
+[13'29'30]  INFO      Collider      : Impact parameter = 16.569 fm
+[13'29'30]  INFO      Collider      : Fermi motion is ON.
+[13'29'30]  INFO     Experiment     : -------------------------------------------------------------------
+[13'29'30]  INFO     Experiment     : Time [fm]   Ediff [GeV]    Scatt.|Decays   Particles         Timing
+[13'29'30]  INFO     Experiment     : -------------------------------------------------------------------
+[13'29'30]  INFO     Experiment     :    -2.062         0.000                0         394     29.023 [min]
+[13'29'32]  INFO     Experiment     :     0.000         0.042                0         394     29.050 [min]
+[13'29'39]  INFO     Experiment     :    10.000        -1.780                0         394     29.176 [min]
+[13'29'47]  INFO     Experiment     :    20.000        -3.918                0         394     29.301 [min]
+[13'29'54]  INFO     Experiment     :    30.000        -5.421                0         394     29.426 [min]
+[13'30'02]  INFO     Experiment     :    40.000        -6.583                0         394     29.549 [min]
+[13'30'09]  INFO     Experiment     :    50.000        -6.560                0         394     29.669 [min]
+[13'30'16]  INFO     Experiment     :    60.000        -5.544                0         394     29.787 [min]
+[13'30'23]  INFO     Experiment     :    70.000        -4.525                0         394     29.903 [min]
+[13'30'30]  INFO     Experiment     :    80.000        -3.966                0         394     30.018 [min]
+[13'30'37]  INFO     Experiment     :    90.000        -3.162                0         394     30.131 [min]
+[13'30'43]  INFO     Experiment     :   100.000        -2.682                0         394     30.242 [min]
+[13'30'43]  INFO     Experiment     : -------------------------------------------------------------------
+[13'30'43]  INFO     Experiment     : Time real: 30.2418 [min]
+[13'30'43]  INFO     Experiment     : Final interaction number: 0
+[13'30'43]  INFO        Main        : Event 21
+[13'30'43]  INFO     Experiment     : random number seed: 3092465300891968130
+[13'30'43]  INFO      Collider      : Impact parameter = 5.588 fm
+[13'30'43]  INFO      Collider      : Fermi motion is ON.
+[13'30'43]  INFO     Experiment     : -------------------------------------------------------------------
+[13'30'43]  INFO     Experiment     : Time [fm]   Ediff [GeV]    Scatt.|Decays   Particles         Timing
+[13'30'43]  INFO     Experiment     : -------------------------------------------------------------------
+[13'30'43]  INFO     Experiment     :    -2.062         0.000                0         394     30.242 [min]
+[13'30'45]  INFO     Experiment     :     0.000        -0.278                0         394     30.268 [min]
+[13'30'59]  INFO     Experiment     :    10.000       -14.821             1657         793     30.504 [min]
+[13'31'11]  INFO     Experiment     :    20.000       -15.275              788         937     30.700 [min]
+[13'31'22]  INFO     Experiment     :    30.000       -14.932              245         980     30.893 [min]
+[13'31'34]  INFO     Experiment     :    40.000       -13.872               93        1001     31.085 [min]
+[13'31'45]  INFO     Experiment     :    50.000       -13.217               40        1013     31.274 [min]
+[13'31'56]  INFO     Experiment     :    60.000       -12.367               21        1018     31.462 [min]
+[13'32'08]  INFO     Experiment     :    70.000       -12.174               10        1025     31.648 [min]
+[13'32'19]  INFO     Experiment     :    80.000       -11.917                4        1026     31.833 [min]
+[13'32'30]  INFO     Experiment     :    90.000       -11.442                1        1027     32.018 [min]
+[13'32'41]  INFO     Experiment     :   100.000       -11.128                4        1029     32.202 [min]
+[13'32'41]  INFO     Experiment     : -------------------------------------------------------------------
+[13'32'41]  INFO     Experiment     : Time real: 32.2019 [min]
+[13'32'41]  INFO     Experiment     : Final interaction number: 2863
+[13'32'41]  INFO        Main        : Event 22
+[13'32'41]  INFO     Experiment     : random number seed: 6010148584495608119
+[13'32'41]  INFO      Collider      : Impact parameter = 9.92076 fm
+[13'32'41]  INFO      Collider      : Fermi motion is ON.
+[13'32'41]  INFO     Experiment     : -------------------------------------------------------------------
+[13'32'41]  INFO     Experiment     : Time [fm]   Ediff [GeV]    Scatt.|Decays   Particles         Timing
+[13'32'41]  INFO     Experiment     : -------------------------------------------------------------------
+[13'32'41]  INFO     Experiment     :    -2.062         0.000                0         394     32.202 [min]
+[13'32'42]  INFO     Experiment     :     0.000        -0.040                0         394     32.228 [min]
+[13'32'51]  INFO     Experiment     :    10.000        -3.102              353         493     32.374 [min]
+[13'33'00]  INFO     Experiment     :    20.000        -4.970              113         518     32.518 [min]
+[13'33'08]  INFO     Experiment     :    30.000        -5.053               55         527     32.660 [min]
+[13'33'17]  INFO     Experiment     :    40.000        -5.607               27         526     32.803 [min]
+[13'33'25]  INFO     Experiment     :    50.000        -5.483               24         528     32.942 [min]
+[13'33'33]  INFO     Experiment     :    60.000        -4.887               12         528     33.079 [min]
+[13'33'42]  INFO     Experiment     :    70.000        -4.137               16         528     33.213 [min]
+[13'33'49]  INFO     Experiment     :    80.000        -3.546                8         528     33.345 [min]
+[13'33'57]  INFO     Experiment     :    90.000        -2.495                5         529     33.475 [min]
+[13'34'05]  INFO     Experiment     :   100.000        -1.472                8         537     33.603 [min]
+[13'34'05]  INFO     Experiment     : -------------------------------------------------------------------
+[13'34'05]  INFO     Experiment     : Time real: 33.6034 [min]
+[13'34'05]  INFO     Experiment     : Final interaction number: 621
+[13'34'05]  INFO        Main        : Event 23
+[13'34'05]  INFO     Experiment     : random number seed: 1713145518646514911
+[13'34'05]  INFO      Collider      : Impact parameter = 14.9591 fm
+[13'34'05]  INFO      Collider      : Fermi motion is ON.
+[13'34'05]  INFO     Experiment     : -------------------------------------------------------------------
+[13'34'05]  INFO     Experiment     : Time [fm]   Ediff [GeV]    Scatt.|Decays   Particles         Timing
+[13'34'05]  INFO     Experiment     : -------------------------------------------------------------------
+[13'34'05]  INFO     Experiment     :    -2.062         0.000                0         394     33.603 [min]
+[13'34'07]  INFO     Experiment     :     0.000        -0.182                0         394     33.630 [min]
+[13'34'15]  INFO     Experiment     :    10.000        -3.241               51         408     33.763 [min]
+[13'34'22]  INFO     Experiment     :    20.000        -7.195               32         408     33.895 [min]
+[13'34'30]  INFO     Experiment     :    30.000        -8.267               14         410     34.026 [min]
+[13'34'38]  INFO     Experiment     :    40.000        -7.571                6         413     34.156 [min]
+[13'34'46]  INFO     Experiment     :    50.000        -7.780                3         414     34.284 [min]
+[13'34'53]  INFO     Experiment     :    60.000        -8.003                1         414     34.410 [min]
+[13'35'01]  INFO     Experiment     :    70.000        -7.716                0         414     34.533 [min]
+[13'35'08]  INFO     Experiment     :    80.000        -6.951                0         414     34.654 [min]
+[13'35'15]  INFO     Experiment     :    90.000        -6.144                0         414     34.772 [min]
+[13'35'22]  INFO     Experiment     :   100.000        -6.085                0         414     34.889 [min]
+[13'35'22]  INFO     Experiment     : -------------------------------------------------------------------
+[13'35'22]  INFO     Experiment     : Time real: 34.8887 [min]
+[13'35'22]  INFO     Experiment     : Final interaction number: 107
+[13'35'22]  INFO        Main        : Event 24
+[13'35'22]  INFO     Experiment     : random number seed: 5809337731372321854
+[13'35'22]  INFO      Collider      : Impact parameter = 11.0496 fm
+[13'35'22]  INFO      Collider      : Fermi motion is ON.
+[13'35'22]  INFO     Experiment     : -------------------------------------------------------------------
+[13'35'22]  INFO     Experiment     : Time [fm]   Ediff [GeV]    Scatt.|Decays   Particles         Timing
+[13'35'22]  INFO     Experiment     : -------------------------------------------------------------------
+[13'35'22]  INFO     Experiment     :    -2.062         0.000                0         394     34.889 [min]
+[13'35'24]  INFO     Experiment     :     0.000        -0.075                0         394     34.915 [min]
+[13'35'32]  INFO     Experiment     :    10.000        -2.600              212         462     35.057 [min]
+[13'35'41]  INFO     Experiment     :    20.000        -4.847               98         480     35.199 [min]
+[13'35'49]  INFO     Experiment     :    30.000        -5.664               33         484     35.341 [min]
+[13'35'58]  INFO     Experiment     :    40.000        -5.819               22         487     35.481 [min]
+[13'36'06]  INFO     Experiment     :    50.000        -5.714               12         485     35.618 [min]
+[13'36'14]  INFO     Experiment     :    60.000        -5.215               11         487     35.751 [min]
+[13'36'22]  INFO     Experiment     :    70.000        -4.854                4         488     35.882 [min]
+[13'36'29]  INFO     Experiment     :    80.000        -3.851                4         489     36.011 [min]
+[13'36'37]  INFO     Experiment     :    90.000        -2.623                3         490     36.137 [min]
+[13'36'44]  INFO     Experiment     :   100.000        -1.613                8         491     36.262 [min]
+[13'36'44]  INFO     Experiment     : -------------------------------------------------------------------
+[13'36'44]  INFO     Experiment     : Time real: 36.2616 [min]
+[13'36'44]  INFO     Experiment     : Final interaction number: 407
+[13'36'44]  INFO        Main        : Event 25
+[13'36'44]  INFO     Experiment     : random number seed: 3458903081013696348
+[13'36'44]  INFO      Collider      : Impact parameter = 14.1796 fm
+[13'36'44]  INFO      Collider      : Fermi motion is ON.
+[13'36'44]  INFO     Experiment     : -------------------------------------------------------------------
+[13'36'44]  INFO     Experiment     : Time [fm]   Ediff [GeV]    Scatt.|Decays   Particles         Timing
+[13'36'44]  INFO     Experiment     : -------------------------------------------------------------------
+[13'36'44]  INFO     Experiment     :    -2.062         0.000                0         394     36.262 [min]
+[13'36'46]  INFO     Experiment     :     0.000         0.239                0         394     36.288 [min]
+[13'36'54]  INFO     Experiment     :    10.000        -0.806               27         415     36.418 [min]
+[13'37'02]  INFO     Experiment     :    20.000        -3.115               10         418     36.547 [min]
+[13'37'09]  INFO     Experiment     :    30.000        -5.153                2         419     36.675 [min]
+[13'37'17]  INFO     Experiment     :    40.000        -6.495                2         421     36.802 [min]
+[13'37'24]  INFO     Experiment     :    50.000        -7.398                7         420     36.926 [min]
+[13'37'32]  INFO     Experiment     :    60.000        -7.686                1         421     37.049 [min]
+[13'37'39]  INFO     Experiment     :    70.000        -7.151                0         421     37.173 [min]
+[13'37'46]  INFO     Experiment     :    80.000        -5.833                0         421     37.291 [min]
+[13'37'53]  INFO     Experiment     :    90.000        -4.075                0         421     37.407 [min]
+[13'38'00]  INFO     Experiment     :   100.000        -2.638                1         421     37.523 [min]
+[13'38'00]  INFO     Experiment     : -------------------------------------------------------------------
+[13'38'00]  INFO     Experiment     : Time real: 37.5225 [min]
+[13'38'00]  INFO     Experiment     : Final interaction number: 50
+[13'38'00]  INFO        Main        : Event 26
+[13'38'00]  INFO     Experiment     : random number seed: 892892246324739757
+[13'38'00]  INFO      Collider      : Impact parameter = 9.45385 fm
+[13'38'00]  INFO      Collider      : Fermi motion is ON.
+[13'38'00]  INFO     Experiment     : -------------------------------------------------------------------
+[13'38'00]  INFO     Experiment     : Time [fm]   Ediff [GeV]    Scatt.|Decays   Particles         Timing
+[13'38'00]  INFO     Experiment     : -------------------------------------------------------------------
+[13'38'00]  INFO     Experiment     :    -2.062         0.000                0         394     37.523 [min]
+[13'38'02]  INFO     Experiment     :     0.000        -0.248                0         394     37.549 [min]
+[13'38'11]  INFO     Experiment     :    10.000        -4.312              389         522     37.702 [min]
+[13'38'20]  INFO     Experiment     :    20.000        -6.442              176         549     37.851 [min]
+[13'38'29]  INFO     Experiment     :    30.000        -6.684               66         550     37.999 [min]
+[13'38'38]  INFO     Experiment     :    40.000        -6.555               51         558     38.148 [min]
+[13'38'46]  INFO     Experiment     :    50.000        -6.607               25         556     38.292 [min]
+[13'38'55]  INFO     Experiment     :    60.000        -5.950               11         557     38.434 [min]
+[13'39'03]  INFO     Experiment     :    70.000        -5.332               17         564     38.573 [min]
+[13'39'11]  INFO     Experiment     :    80.000        -4.690                5         564     38.710 [min]
+[13'39'19]  INFO     Experiment     :    90.000        -4.090                1         565     38.846 [min]
+[13'39'27]  INFO     Experiment     :   100.000        -3.650               10         571     38.979 [min]
+[13'39'27]  INFO     Experiment     : -------------------------------------------------------------------
+[13'39'27]  INFO     Experiment     : Time real: 38.9793 [min]
+[13'39'27]  INFO     Experiment     : Final interaction number: 751
+[13'39'27]  INFO        Main        : Event 27
+[13'39'27]  INFO     Experiment     : random number seed: 6704277369033577445
+[13'39'27]  INFO      Collider      : Impact parameter = 16.87 fm
+[13'39'27]  INFO      Collider      : Fermi motion is ON.
+[13'39'27]  INFO     Experiment     : -------------------------------------------------------------------
+[13'39'27]  INFO     Experiment     : Time [fm]   Ediff [GeV]    Scatt.|Decays   Particles         Timing
+[13'39'27]  INFO     Experiment     : -------------------------------------------------------------------
+[13'39'27]  INFO     Experiment     :    -2.062         0.000                0         394     38.979 [min]
+[13'39'29]  INFO     Experiment     :     0.000         0.078                0         394     39.006 [min]
+[13'39'37]  INFO     Experiment     :    10.000        -1.224                0         394     39.134 [min]
+[13'39'45]  INFO     Experiment     :    20.000        -3.200                0         394     39.263 [min]
+[13'39'52]  INFO     Experiment     :    30.000        -4.840                0         394     39.391 [min]
+[13'40'00]  INFO     Experiment     :    40.000        -5.600                0         394     39.517 [min]
+[13'40'07]  INFO     Experiment     :    50.000        -5.569                0         394     39.642 [min]
+[13'40'15]  INFO     Experiment     :    60.000        -5.790                0         394     39.763 [min]
+[13'40'22]  INFO     Experiment     :    70.000        -6.078                0         394     39.883 [min]
+[13'40'29]  INFO     Experiment     :    80.000        -6.000                0         394     40.000 [min]
+[13'40'36]  INFO     Experiment     :    90.000        -5.347                0         394     40.115 [min]
+[13'40'42]  INFO     Experiment     :   100.000        -4.322                0         394     40.228 [min]
+[13'40'42]  INFO     Experiment     : -------------------------------------------------------------------
+[13'40'42]  INFO     Experiment     : Time real: 40.2276 [min]
+[13'40'42]  INFO     Experiment     : Final interaction number: 0
+[13'40'42]  INFO        Main        : Event 28
+[13'40'42]  INFO     Experiment     : random number seed: 4186022632505623908
+[13'40'42]  INFO      Collider      : Impact parameter = 15.7416 fm
+[13'40'42]  INFO      Collider      : Fermi motion is ON.
+[13'40'42]  INFO     Experiment     : -------------------------------------------------------------------
+[13'40'42]  INFO     Experiment     : Time [fm]   Ediff [GeV]    Scatt.|Decays   Particles         Timing
+[13'40'42]  INFO     Experiment     : -------------------------------------------------------------------
+[13'40'42]  INFO     Experiment     :    -2.062         0.000                0         394     40.228 [min]
+[13'40'44]  INFO     Experiment     :     0.000        -0.199                0         394     40.254 [min]
+[13'40'52]  INFO     Experiment     :    10.000        -2.233                0         394     40.380 [min]
+[13'40'59]  INFO     Experiment     :    20.000        -4.591                0         394     40.506 [min]
+[13'41'07]  INFO     Experiment     :    30.000        -6.281                0         394     40.631 [min]
+[13'41'14]  INFO     Experiment     :    40.000        -7.142                0         394     40.753 [min]
+[13'41'21]  INFO     Experiment     :    50.000        -7.523                0         394     40.874 [min]
+[13'41'28]  INFO     Experiment     :    60.000        -7.403                0         394     40.992 [min]
+[13'41'35]  INFO     Experiment     :    70.000        -6.545                0         394     41.109 [min]
+[13'41'42]  INFO     Experiment     :    80.000        -6.088                0         394     41.223 [min]
+[13'41'49]  INFO     Experiment     :    90.000        -6.460                0         394     41.336 [min]
+[13'41'56]  INFO     Experiment     :   100.000        -7.285                0         394     41.447 [min]
+[13'41'56]  INFO     Experiment     : -------------------------------------------------------------------
+[13'41'56]  INFO     Experiment     : Time real: 41.4466 [min]
+[13'41'56]  INFO     Experiment     : Final interaction number: 0
+[13'41'56]  INFO        Main        : Event 29
+[13'41'56]  INFO     Experiment     : random number seed: 1494954518490502063
+[13'41'56]  INFO      Collider      : Impact parameter = 9.23299 fm
+[13'41'56]  INFO      Collider      : Fermi motion is ON.
+[13'41'56]  INFO     Experiment     : -------------------------------------------------------------------
+[13'41'56]  INFO     Experiment     : Time [fm]   Ediff [GeV]    Scatt.|Decays   Particles         Timing
+[13'41'56]  INFO     Experiment     : -------------------------------------------------------------------
+[13'41'56]  INFO     Experiment     :    -2.062         0.000                0         394     41.447 [min]
+[13'41'57]  INFO     Experiment     :     0.000        -0.105                0         394     41.473 [min]
+[13'42'07]  INFO     Experiment     :    10.000        -4.286              565         575     41.634 [min]
+[13'42'16]  INFO     Experiment     :    20.000        -5.910              224         611     41.789 [min]
+[13'42'25]  INFO     Experiment     :    30.000        -5.960              102         626     41.945 [min]
+[13'42'35]  INFO     Experiment     :    40.000        -4.976               58         632     42.100 [min]
+[13'42'44]  INFO     Experiment     :    50.000        -4.706               37         632     42.252 [min]
+[13'42'53]  INFO     Experiment     :    60.000        -4.689               28         638     42.401 [min]
+[13'43'02]  INFO     Experiment     :    70.000        -4.638               13         636     42.547 [min]
+[13'43'10]  INFO     Experiment     :    80.000        -4.029               13         637     42.691 [min]
+[13'43'19]  INFO     Experiment     :    90.000        -3.673                6         640     42.833 [min]
+[13'43'27]  INFO     Experiment     :   100.000        -3.766                6         645     42.974 [min]
+[13'43'27]  INFO     Experiment     : -------------------------------------------------------------------
+[13'43'27]  INFO     Experiment     : Time real: 42.9742 [min]
+[13'43'27]  INFO     Experiment     : Final interaction number: 1052
+[13'43'27]  INFO        Main        : Event 30
+[13'43'27]  INFO     Experiment     : random number seed: 9184801483761722855
+[13'43'27]  INFO      Collider      : Impact parameter = 13.8183 fm
+[13'43'27]  INFO      Collider      : Fermi motion is ON.
+[13'43'27]  INFO     Experiment     : -------------------------------------------------------------------
+[13'43'27]  INFO     Experiment     : Time [fm]   Ediff [GeV]    Scatt.|Decays   Particles         Timing
+[13'43'27]  INFO     Experiment     : -------------------------------------------------------------------
+[13'43'27]  INFO     Experiment     :    -2.062         0.000                0         394     42.974 [min]
+[13'43'29]  INFO     Experiment     :     0.000        -0.238                0         394     43.001 [min]
+[13'43'37]  INFO     Experiment     :    10.000        -3.286                2         398     43.131 [min]
+[13'43'44]  INFO     Experiment     :    20.000        -6.232                5         399     43.260 [min]
+[13'43'52]  INFO     Experiment     :    30.000        -7.517                2         399     43.388 [min]
+[13'44'00]  INFO     Experiment     :    40.000        -7.947                0         399     43.513 [min]
+[13'44'07]  INFO     Experiment     :    50.000        -8.406                0         399     43.637 [min]
+[13'44'14]  INFO     Experiment     :    60.000        -9.143                0         399     43.760 [min]
+[13'44'21]  INFO     Experiment     :    70.000        -9.458                0         399     43.879 [min]
+[13'44'29]  INFO     Experiment     :    80.000        -9.293                0         399     43.998 [min]
+[13'44'36]  INFO     Experiment     :    90.000        -8.985                0         399     44.116 [min]
+[13'44'42]  INFO     Experiment     :   100.000        -8.393                0         399     44.229 [min]
+[13'44'42]  INFO     Experiment     : -------------------------------------------------------------------
+[13'44'42]  INFO     Experiment     : Time real: 44.2292 [min]
+[13'44'42]  INFO     Experiment     : Final interaction number: 9
+[13'44'42]  INFO        Main        : Event 31
+[13'44'42]  INFO     Experiment     : random number seed: 6935631287363925596
+[13'44'42]  INFO      Collider      : Impact parameter = 7.44204 fm
+[13'44'42]  INFO      Collider      : Fermi motion is ON.
+[13'44'42]  INFO     Experiment     : -------------------------------------------------------------------
+[13'44'42]  INFO     Experiment     : Time [fm]   Ediff [GeV]    Scatt.|Decays   Particles         Timing
+[13'44'42]  INFO     Experiment     : -------------------------------------------------------------------
+[13'44'42]  INFO     Experiment     :    -2.062         0.000                0         394     44.229 [min]
+[13'44'44]  INFO     Experiment     :     0.000        -0.060                0         394     44.256 [min]
+[13'44'55]  INFO     Experiment     :    10.000        -7.376             1091         663     44.446 [min]
+[13'45'06]  INFO     Experiment     :    20.000        -8.823              500         755     44.624 [min]
+[13'45'17]  INFO     Experiment     :    30.000        -8.881              173         782     44.802 [min]
+[13'45'27]  INFO     Experiment     :    40.000        -8.728               63         792     44.978 [min]
+[13'45'38]  INFO     Experiment     :    50.000        -8.628               51         799     45.150 [min]
+[13'45'48]  INFO     Experiment     :    60.000        -7.953               23         804     45.320 [min]
+[13'45'58]  INFO     Experiment     :    70.000        -7.126               23         808     45.488 [min]
+[13'46'08]  INFO     Experiment     :    80.000        -6.394               18         810     45.653 [min]
+[13'46'18]  INFO     Experiment     :    90.000        -5.768                6         815     45.818 [min]
+[13'46'28]  INFO     Experiment     :   100.000        -5.024                9         823     45.982 [min]
+[13'46'28]  INFO     Experiment     : -------------------------------------------------------------------
+[13'46'28]  INFO     Experiment     : Time real: 45.9817 [min]
+[13'46'28]  INFO     Experiment     : Final interaction number: 1957
+[13'46'28]  INFO        Main        : Event 32
+[13'46'28]  INFO     Experiment     : random number seed: 4008412199073339516
+[13'46'28]  INFO      Collider      : Impact parameter = 16.7317 fm
+[13'46'28]  INFO      Collider      : Fermi motion is ON.
+[13'46'28]  INFO     Experiment     : -------------------------------------------------------------------
+[13'46'28]  INFO     Experiment     : Time [fm]   Ediff [GeV]    Scatt.|Decays   Particles         Timing
+[13'46'28]  INFO     Experiment     : -------------------------------------------------------------------
+[13'46'28]  INFO     Experiment     :    -2.062         0.000                0         394     45.982 [min]
+[13'46'29]  INFO     Experiment     :     0.000        -0.153                0         394     46.008 [min]
+[13'46'37]  INFO     Experiment     :    10.000        -2.925                0         394     46.138 [min]
+[13'46'45]  INFO     Experiment     :    20.000        -6.029                0         394     46.266 [min]
+[13'46'52]  INFO     Experiment     :    30.000        -8.086                0         394     46.393 [min]
+[13'47'00]  INFO     Experiment     :    40.000        -9.244                0         394     46.518 [min]
+[13'47'07]  INFO     Experiment     :    50.000       -10.016                0         394     46.640 [min]
+[13'47'14]  INFO     Experiment     :    60.000       -10.299                0         394     46.760 [min]
+[13'47'21]  INFO     Experiment     :    70.000        -9.844                0         394     46.877 [min]
+[13'47'28]  INFO     Experiment     :    80.000        -9.087                0         394     46.993 [min]
+[13'47'35]  INFO     Experiment     :    90.000        -8.317                0         394     47.107 [min]
+[13'47'42]  INFO     Experiment     :   100.000        -6.954                0         394     47.219 [min]
+[13'47'42]  INFO     Experiment     : -------------------------------------------------------------------
+[13'47'42]  INFO     Experiment     : Time real: 47.2192 [min]
+[13'47'42]  INFO     Experiment     : Final interaction number: 0
+[13'47'42]  INFO        Main        : Event 33
+[13'47'42]  INFO     Experiment     : random number seed: 9210824429392439952
+[13'47'42]  INFO      Collider      : Impact parameter = 15.2901 fm
+[13'47'42]  INFO      Collider      : Fermi motion is ON.
+[13'47'42]  INFO     Experiment     : -------------------------------------------------------------------
+[13'47'42]  INFO     Experiment     : Time [fm]   Ediff [GeV]    Scatt.|Decays   Particles         Timing
+[13'47'42]  INFO     Experiment     : -------------------------------------------------------------------
+[13'47'42]  INFO     Experiment     :    -2.062         0.000                0         394     47.219 [min]
+[13'47'43]  INFO     Experiment     :     0.000        -0.224                0         394     47.245 [min]
+[13'47'51]  INFO     Experiment     :    10.000        -1.795                0         394     47.372 [min]
+[13'47'59]  INFO     Experiment     :    20.000        -2.951                0         394     47.497 [min]
+[13'48'06]  INFO     Experiment     :    30.000        -3.655                0         394     47.620 [min]
+[13'48'13]  INFO     Experiment     :    40.000        -4.006                0         394     47.743 [min]
+[13'48'21]  INFO     Experiment     :    50.000        -3.836                0         394     47.864 [min]
+[13'48'28]  INFO     Experiment     :    60.000        -3.597                0         394     47.983 [min]
+[13'48'35]  INFO     Experiment     :    70.000        -3.301                0         394     48.100 [min]
+[13'48'42]  INFO     Experiment     :    80.000        -2.646                0         394     48.216 [min]
+[13'48'48]  INFO     Experiment     :    90.000        -1.976                0         394     48.329 [min]
+[13'48'55]  INFO     Experiment     :   100.000        -1.788                0         394     48.441 [min]
+[13'48'55]  INFO     Experiment     : -------------------------------------------------------------------
+[13'48'55]  INFO     Experiment     : Time real: 48.4411 [min]
+[13'48'55]  INFO     Experiment     : Final interaction number: 0
+[13'48'55]  INFO        Main        : Event 34
+[13'48'55]  INFO     Experiment     : random number seed: 6534352095170728582
+[13'48'55]  INFO      Collider      : Impact parameter = 13.1801 fm
+[13'48'55]  INFO      Collider      : Fermi motion is ON.
+[13'48'55]  INFO     Experiment     : -------------------------------------------------------------------
+[13'48'55]  INFO     Experiment     : Time [fm]   Ediff [GeV]    Scatt.|Decays   Particles         Timing
+[13'48'55]  INFO     Experiment     : -------------------------------------------------------------------
+[13'48'55]  INFO     Experiment     :    -2.062         0.000                0         394     48.441 [min]
+[13'48'57]  INFO     Experiment     :     0.000         0.271                0         394     48.467 [min]
+[13'49'05]  INFO     Experiment     :    10.000         0.047               37         414     48.598 [min]
+[13'49'12]  INFO     Experiment     :    20.000        -3.050                6         418     48.728 [min]
+[13'49'20]  INFO     Experiment     :    30.000        -5.254               15         419     48.859 [min]
+[13'49'28]  INFO     Experiment     :    40.000        -6.309                3         422     48.988 [min]
+[13'49'36]  INFO     Experiment     :    50.000        -6.742                1         421     49.116 [min]
+[13'49'43]  INFO     Experiment     :    60.000        -6.585                2         422     49.241 [min]
+[13'49'51]  INFO     Experiment     :    70.000        -6.096                3         420     49.364 [min]
+[13'49'58]  INFO     Experiment     :    80.000        -5.302                4         421     49.485 [min]
+[13'50'05]  INFO     Experiment     :    90.000        -4.377                1         421     49.604 [min]
+[13'50'12]  INFO     Experiment     :   100.000        -3.492                2         421     49.721 [min]
+[13'50'12]  INFO     Experiment     : -------------------------------------------------------------------
+[13'50'12]  INFO     Experiment     : Time real: 49.7211 [min]
+[13'50'12]  INFO     Experiment     : Final interaction number: 74
+[13'50'12]  INFO        Main        : Event 35
+[13'50'12]  INFO     Experiment     : random number seed: 1890968739866832267
+[13'50'12]  INFO      Collider      : Impact parameter = 17.9093 fm
+[13'50'12]  INFO      Collider      : Fermi motion is ON.
+[13'50'12]  INFO     Experiment     : -------------------------------------------------------------------
+[13'50'12]  INFO     Experiment     : Time [fm]   Ediff [GeV]    Scatt.|Decays   Particles         Timing
+[13'50'12]  INFO     Experiment     : -------------------------------------------------------------------
+[13'50'12]  INFO     Experiment     :    -2.062         0.000                0         394     49.721 [min]
+[13'50'14]  INFO     Experiment     :     0.000        -0.291                0         394     49.747 [min]
+[13'50'21]  INFO     Experiment     :    10.000        -3.915                0         394     49.872 [min]
+[13'50'29]  INFO     Experiment     :    20.000        -8.121                0         394     49.997 [min]
+[13'50'36]  INFO     Experiment     :    30.000        -9.861                0         394     50.121 [min]
+[13'50'43]  INFO     Experiment     :    40.000       -10.313                0         394     50.243 [min]
+[13'50'51]  INFO     Experiment     :    50.000       -10.033                0         394     50.363 [min]
+[13'50'58]  INFO     Experiment     :    60.000        -9.662                0         394     50.481 [min]
+[13'51'05]  INFO     Experiment     :    70.000        -8.722                0         394     50.598 [min]
+[13'51'11]  INFO     Experiment     :    80.000        -7.773                0         394     50.712 [min]
+[13'51'18]  INFO     Experiment     :    90.000        -7.103                0         394     50.825 [min]
+[13'51'25]  INFO     Experiment     :   100.000        -6.286                0         394     50.937 [min]
+[13'51'25]  INFO     Experiment     : -------------------------------------------------------------------
+[13'51'25]  INFO     Experiment     : Time real: 50.937 [min]
+[13'51'25]  INFO     Experiment     : Final interaction number: 0
+[13'51'25]  INFO        Main        : Event 36
+[13'51'25]  INFO     Experiment     : random number seed: 1571971894335075657
+[13'51'25]  INFO      Collider      : Impact parameter = 7.42481 fm
+[13'51'25]  INFO      Collider      : Fermi motion is ON.
+[13'51'25]  INFO     Experiment     : -------------------------------------------------------------------
+[13'51'25]  INFO     Experiment     : Time [fm]   Ediff [GeV]    Scatt.|Decays   Particles         Timing
+[13'51'25]  INFO     Experiment     : -------------------------------------------------------------------
+[13'51'25]  INFO     Experiment     :    -2.062         0.000                0         394     50.937 [min]
+[13'51'27]  INFO     Experiment     :     0.000         0.254                0         394     50.963 [min]
+[13'51'38]  INFO     Experiment     :    10.000        -8.174             1112         663     51.155 [min]
+[13'51'48]  INFO     Experiment     :    20.000        -9.026              426         744     51.326 [min]
+[13'51'59]  INFO     Experiment     :    30.000        -8.806              150         773     51.498 [min]
+[13'52'09]  INFO     Experiment     :    40.000        -8.648               84         785     51.666 [min]
+[13'52'19]  INFO     Experiment     :    50.000        -7.424               34         789     51.832 [min]
+[13'52'28]  INFO     Experiment     :    60.000        -6.265               24         791     51.995 [min]
+[13'52'38]  INFO     Experiment     :    70.000        -5.742               22         794     52.155 [min]
+[13'52'48]  INFO     Experiment     :    80.000        -5.419               15         801     52.315 [min]
+[13'52'57]  INFO     Experiment     :    90.000        -4.762               12         803     52.474 [min]
+[13'53'07]  INFO     Experiment     :   100.000        -4.123               22         817     52.632 [min]
+[13'53'07]  INFO     Experiment     : -------------------------------------------------------------------
+[13'53'07]  INFO     Experiment     : Time real: 52.632 [min]
+[13'53'07]  INFO     Experiment     : Final interaction number: 1901
+[13'53'07]  INFO        Main        : Event 37
+[13'53'07]  INFO     Experiment     : random number seed: 5220273461722124663
+[13'53'07]  INFO      Collider      : Impact parameter = 8.61522 fm
+[13'53'07]  INFO      Collider      : Fermi motion is ON.
+[13'53'07]  INFO     Experiment     : -------------------------------------------------------------------
+[13'53'07]  INFO     Experiment     : Time [fm]   Ediff [GeV]    Scatt.|Decays   Particles         Timing
+[13'53'07]  INFO     Experiment     : -------------------------------------------------------------------
+[13'53'07]  INFO     Experiment     :    -2.062         0.000                0         394     52.632 [min]
+[13'53'08]  INFO     Experiment     :     0.000         0.084                0         394     52.658 [min]
+[13'53'18] FATAL         Fpe        : Floating point trap was raised: Invalid (domain error occurred)
+stack trace:
+  /lib/x86_64-linux-gnu/libpthread.so.0 : ()+0xf890
+  /lib/x86_64-linux-gnu/libm.so.6 : ()+0x15543
+  /lib/x86_64-linux-gnu/libm.so.6 : pow()+0x1c
+  /lustre/nyx/hades/user/parfenov/Soft/Models/SMASH/smash/build/smash : smash::Potentials::skyrme_force(double, smash::ThreeVector, smash::ThreeVector, smash::ThreeVector) const+0x36
+  /lustre/nyx/hades/user/parfenov/Soft/Models/SMASH/smash/build/smash : smash::Potentials::all_forces(smash::ThreeVector const&, std::vector<smash::ParticleData, std::allocator<smash::ParticleData> > const&) const+0x244
+  /lustre/nyx/hades/user/parfenov/Soft/Models/SMASH/smash/build/smash : smash::update_momenta(smash::Particles*, double, smash::Potentials const&, smash::RectangularLattice<std::pair<smash::ThreeVector, smash::ThreeVector> >*, smash::RectangularLattice<std::pair<smash::ThreeVector, smash::ThreeVector> >*)+0x5fb
+  /lustre/nyx/hades/user/parfenov/Soft/Models/SMASH/smash/build/smash : smash::Experiment<smash::ColliderModus>::run_time_evolution()+0x396
+  /lustre/nyx/hades/user/parfenov/Soft/Models/SMASH/smash/build/smash : smash::Experiment<smash::ColliderModus>::run()+0x191
+  /lustre/nyx/hades/user/parfenov/Soft/Models/SMASH/smash/build/smash : main()+0x1952
+  /lib/x86_64-linux-gnu/libc.so.6 : __libc_start_main()+0xf5
+  /lustre/nyx/hades/user/parfenov/Soft/Models/SMASH/smash/build/smash() [0x44a997]
