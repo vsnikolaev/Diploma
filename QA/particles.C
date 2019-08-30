@@ -12,19 +12,47 @@ void particles::Loop()
    Long64_t nentries = fChain->GetEntries();
    std::cout<<"I will run " << nentries <<" events"<<std::endl;
    InitHists();
+   Long64_t MyIter = 0;
    for (Long64_t jentry=0; jentry<nentries;jentry++) {
-      if (! (jentry%100) ) {
+      if (!(jentry%100)) {
          std::cout << "\r I COMPLETED " << jentry << " events out of " << nentries << std::flush;
       }
       Long64_t ientry = LoadTree(jentry);
       if (ientry < 0) break;
-      if (impact_b < 0) continue;    //only final steh has b
       Long64_t aaa = GetEntry(jentry);
+      if (impact_b < 0) continue;    //only final steh has b, all other has -1. if many time steps
+      // if (t[0]!=100) continue    //to draw time step;
       FillHists();
    }
    std::cout<<"\nGG WP\n";
    SaveHists();
 }
+
+
+
+
+//for correct work do:
+/* root -l
+   TChain ch("particles")
+   ch.Add("/mnt/pool/rhic/4/vsnikolaev/Soft/Models/Basov/smashtr/part5/*.root")
+   ch.MakeClass()
+   .q
+*/ //and cp /mnt/pool/rhic/4/vsnikolaev/Soft/Models/Basov/smashtr/part5/
+//some helpfull commands
+/*
+root -l
+TFile *_file0 = TFile::Open("collisions_88386001_1.root")
+_file0->ls()
+collisions->Print()
+particles->GetListOfLeaves()->ls()
+particles->Scan()
+particles->Draw("pdgcode","TMath::Abs(pdgcode)<5000")
+particles->Draw("pz","pdgcode==2212")
+particles->Draw("pz","pdgcode==211")
+particles->Draw("pz","pdgcode==2212")
+particles->Draw("pz","pdgcode==211")
+particles->Draw("pz:px","pdgcode==321 && pz<1.0", "colz")
+*/
 
 //   In a ROOT session, you can do:
 //      root> .L particles.C
